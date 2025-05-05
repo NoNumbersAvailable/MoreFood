@@ -9,7 +9,6 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.yus.foodmod.Foodmod;
 
-
 import java.util.List;
 
 public class ModPlacedFeatures {
@@ -21,6 +20,7 @@ public class ModPlacedFeatures {
         register(context, BLUE_BERRY_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.BLUE_BERRY_BUSH_KEY),
                 RarityFilterPlacementModifier.of(32), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
     }
+
     public static RegistryKey<PlacedFeature> registerKey(String name) {
         return RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Foodmod.MOD_ID, name));
 

@@ -27,6 +27,9 @@ public class Foodmod implements ModInitializer {
     @Override
     public void onInitialize() {
 
+
+
+
         AutoConfig.register(FoodmodConfig.class, GsonConfigSerializer::new);
         CONFIG = AutoConfig.getConfigHolder(FoodmodConfig.class).getConfig();
         ItemGroupInit.registerItemGroups();
