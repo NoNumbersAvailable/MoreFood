@@ -1,0 +1,41 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:rice"
+    },
+    "title": "Rice to Meet You",
+    "description": "Obtain Rice",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "task": {
+    "experience": 10
+  },
+  "parent": "foodmod:foodmod",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "foodmod:rice"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

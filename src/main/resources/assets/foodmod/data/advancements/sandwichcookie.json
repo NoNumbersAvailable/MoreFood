@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:sandwich_cookie"
+    },
+    "title": "He Never Came Back With the Milk",
+    "description": "Eat a Sandwich Cookie",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "task": {
+    "experience": 15
+  },
+  "parent": "foodmod:wheat",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:sandwich_cookie"
+
+
+
+          ]
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:sugar_cane_bale"
+  ],
+  "result": {
+    "count": 9,
+    "id": "minecraft:sugar_cane"
+  }
+}

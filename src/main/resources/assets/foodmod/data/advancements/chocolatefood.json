@@ -1,0 +1,93 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:brownie"
+    },
+    "title": "PayDay!",
+    "description": "Consume all Chocolate Related Food",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 450
+  },
+  "parent": "foodmod:chocolate",
+  "criteria": {
+    "sweet_candy": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:sweet_candy"
+          ]
+        }
+      }
+    },
+    "brownie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:brownie"
+          ]
+        }
+      }
+    },"chocolate_cake": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:chocolate_cake"
+          ]
+        }
+      }
+    },"chocolate_ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:chocolate_ice_cream"
+          ]
+        }
+      }
+    },"chocolate_donut": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:chocolate_donut"
+          ]
+        }
+      }
+    },"cookie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:cookie"
+          ]
+        }
+      }
+    },
+    "chocolate_bar": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:chocolate_bar"
+          ]
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+
+
+

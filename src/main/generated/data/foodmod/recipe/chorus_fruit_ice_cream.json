@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:chorus_fruit",
+    "minecraft:snowball",
+    "minecraft:milk_bucket",
+    "minecraft:sugar",
+    "minecraft:wheat"
+  ],
+  "result": {
+    "count": 4,
+    "id": "foodmod:chorus_fruit_ice_cream"
+  }
+}

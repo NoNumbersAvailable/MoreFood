@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:golden_potato"
+    },
+    "title": "A Mellow Yellow Potato",
+    "description": "Construct a Golden Potato",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "task": {
+    "experience": 50
+  },
+  "parent": "foodmod:gold",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "foodmod:golden_potato"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:cooked_salmon",
+    "foodmod:cooked_pufferfish",
+    "minecraft:dried_kelp",
+    "foodmod:cooked_tropical_fish",
+    "minecraft:cooked_cod",
+    [
+      "minecraft:red_mushroom",
+      "minecraft:brown_mushroom"
+    ],
+    "minecraft:bowl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:fish_stew"
+  }
+}

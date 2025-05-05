@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:rice",
+    "foodmod:rice",
+    "foodmod:rice",
+    "minecraft:milk_bucket",
+    "minecraft:cocoa_beans",
+    "minecraft:sugar",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:rice_pudding"
+  }
+}

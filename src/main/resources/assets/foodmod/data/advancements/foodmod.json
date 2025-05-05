@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:chocolate_cake"
+    },
+    "title": "Food Mod",
+    "description": "The Food Waits for You!",
+    "frame": "task",
+    "show_toast": true,
+    "hidden": false,
+    "announce_to_chat": true,
+    "background": "foodmod:textures/block/chocolate_block.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:air"
+              ]
+            }
+
+        }
+      }
+    }
+  }
+
+
+

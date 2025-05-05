@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "foodmod:block/food_stand_bottom",
+    "up": "foodmod:block/food_stand_top",
+    "north": "foodmod:block/food_stand_front",
+    "east": "foodmod:block/food_stand_side",
+    "south": "foodmod:block/food_stand_front",
+    "west": "foodmod:block/food_stand_side",
+    "particle": "foodmod:block/food_stand_front"
+  }
+}

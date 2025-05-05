@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:bread",
+    [
+      "minecraft:cooked_porkchop",
+      "minecraft:cooked_rabbit"
+    ]
+  ],
+  "result": {
+    "count": 2,
+    "id": "foodmod:hotdog"
+  }
+}

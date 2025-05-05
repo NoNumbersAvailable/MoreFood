@@ -1,0 +1,122 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:fruit_salad"
+    },
+    "title": "You're one in a melon!",
+    "description": "Consume every Fruit",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 700
+  },
+  "parent": "foodmod:banana",
+  "criteria": {
+    "golden_apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:golden_apple"
+          ]
+        }
+      }
+    },
+
+    "chorus_fruit": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:chorus_fruit"
+          ]
+        }
+      }
+    },
+    "apple": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:apple"
+          ]
+        }
+      }
+    },
+    "sweet_berries": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:sweet_berries"
+          ]
+        }
+      }
+    },
+    "glow_berries": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:glow_berries"
+          ]
+        }
+      }
+    },
+    "melon_slice": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:melon_slice"
+          ]
+        }
+      }
+    },
+
+
+    "banana": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:banana"
+          ]
+        }
+      }
+    },
+    "blue_berries": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:blue_berries"
+          ]
+        }
+      }
+    },
+    "chorus_fruit": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:chorus_fruit"
+          ]
+        }
+      }
+    }
+
+
+
+
+
+  }
+}
+
+
+
+
+

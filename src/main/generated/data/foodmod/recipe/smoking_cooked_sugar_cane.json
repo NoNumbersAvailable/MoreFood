@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 85,
+  "experience": 0.35,
+  "ingredient": "minecraft:sugar_cane",
+  "result": {
+    "id": "foodmod:cooked_sugar_cane"
+  }
+}

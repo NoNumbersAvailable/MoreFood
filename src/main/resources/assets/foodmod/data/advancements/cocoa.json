@@ -1,0 +1,44 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "title": "King of the Beans",
+    "description": "Obtain Cocoa Beans",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "task": {
+    "experience": 10
+  },
+  "parent": "foodmod:foodmod",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft::cocoa_beans"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:blue_berry_donut"
+    },
+    "title": "Donut Worry About Your Health",
+    "description": "Consume all Donuts",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "parent": "foodmod:wheat",
+  "criteria": {
+    "white_donut": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:white_donut"
+          ]
+        }
+      }
+    },
+    "pink_donut": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:pink_donut"
+          ]
+        }
+      }
+    },"chocolate_donut": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:chocolate_donut"
+          ]
+        }
+      }
+    },  "banana_donut": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:banana_donut"
+          ]
+        }
+      }
+    },
+    "blue_berry_donut": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:blue_berry_donut"
+          ]
+        }
+      }
+    }
+
+
+    }
+
+}
+
+
+
+
+

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "foodmod:chocolate_bar",
+    "W": "#minecraft:planks"
+  },
+  "pattern": [
+    "EE",
+    "WW",
+    "WW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:food_stand"
+  }
+}

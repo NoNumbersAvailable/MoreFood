@@ -1,0 +1,116 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:dried_kelp"
+    },
+    "title": "Gotta go fast",
+    "description": "Consume every quickly eaten food (bubblegum not included)",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 150
+  },
+  "parent": "foodmod:sugarcane",
+  "criteria": {
+    "cooked_sugar_cane": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_sugar_cane"
+          ]
+        }
+      }
+    },
+    "cooked_bamboo": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_bamboo"
+          ]
+        }
+      }
+    },"candy_cane": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:candy_cane"
+          ]
+        }
+      }
+    },
+    "honey_candy": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:honey_candy"
+          ]
+        }
+      }
+    },
+    "dried_kelp": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:dried_kelp"
+          ]
+        }
+      }
+    },
+    "marshmallow": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:marshmallow"
+          ]
+        }
+      }
+    },
+    "cooked_marshmallow": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_marshmallow"
+          ]
+        }
+      }
+    },
+    "cooked_cocoa_beans": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_cocoa_beans"
+          ]
+        }
+      }
+    },
+    "sweet_candy": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:sweet_candy"
+          ]
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+
+
+

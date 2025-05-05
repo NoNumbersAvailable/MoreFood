@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:pumpkin",
+    "minecraft:pumpkin"
+  ],
+  "result": {
+    "count": 18,
+    "id": "foodmod:pumpkin_slice"
+  }
+}

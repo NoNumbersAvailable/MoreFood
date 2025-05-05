@@ -1,0 +1,82 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:rice_balls"
+    },
+    "title": "No pain, no grain!",
+    "description": "Consume all Rice Foods",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 200
+  },
+  "parent": "foodmod:riceandcompact",
+  "criteria": {
+    "rice": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:rice"
+          ]
+        }
+      }
+    },
+    "sushi": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:sushi"
+          ]
+        }
+      }
+    },"rice_cake": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:rice_cake"
+          ]
+        }
+      }
+    },"rice_pudding": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:rice_pudding"
+          ]
+        }
+      }
+    },
+    "rice_balls": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:rice_balls"
+          ]
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

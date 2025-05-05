@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:wheat",
+    [
+      "minecraft:cooked_beef",
+      "foodmod:cooked_flesh",
+      "minecraft:cooked_porkchop",
+      "foodmod:cooked_spider_eye"
+    ],
+    "minecraft:carrot",
+    "minecraft:beetroot"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:taco"
+  }
+}

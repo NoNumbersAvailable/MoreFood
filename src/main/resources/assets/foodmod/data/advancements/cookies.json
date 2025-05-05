@@ -1,0 +1,66 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:honey_cookie"
+    },
+    "title": "Cook-keys!",
+    "description": "Consume all Cookie Related Food",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "parent": "foodmod:sandwichcookie",
+  "criteria": {
+    "sandwich_cookie_ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:sandwich_cookie_ice_cream"
+          ]
+        }
+      }
+    },
+    "cookie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:cookie"
+          ]
+        }
+      }
+    },"honey_cookie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:honey_cookie"
+          ]
+        }
+      }
+    },
+    "sandwich_cookie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:sandwich_cookie"
+          ]
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+
+
+

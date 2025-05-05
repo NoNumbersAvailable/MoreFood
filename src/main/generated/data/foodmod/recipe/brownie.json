@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:chocolate_bar",
+    "minecraft:sugar",
+    "minecraft:milk_bucket",
+    "minecraft:egg",
+    "minecraft:wheat"
+  ],
+  "result": {
+    "count": 2,
+    "id": "foodmod:brownie"
+  }
+}

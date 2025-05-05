@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 170,
+  "experience": 0.35,
+  "ingredient": "minecraft:bamboo",
+  "result": {
+    "id": "foodmod:cooked_bamboo"
+  }
+}

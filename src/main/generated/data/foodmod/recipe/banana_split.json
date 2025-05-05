@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:banana",
+    "minecraft:snowball",
+    "minecraft:milk_bucket",
+    "foodmod:chocolate_bar",
+    "minecraft:sweet_berries",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:banana_split"
+  }
+}

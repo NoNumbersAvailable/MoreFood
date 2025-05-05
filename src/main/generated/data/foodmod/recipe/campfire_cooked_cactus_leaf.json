@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 250,
+  "experience": 0.35,
+  "ingredient": "foodmod:cooked_cactus_leaf",
+  "result": {
+    "id": "foodmod:cooked_warped_fungus"
+  }
+}

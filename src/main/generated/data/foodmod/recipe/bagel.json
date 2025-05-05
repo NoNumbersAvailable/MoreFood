@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "minecraft:wheat",
+    "W": "minecraft:egg"
+  },
+  "pattern": [
+    "EEE",
+    "EWE",
+    "EEE"
+  ],
+  "result": {
+    "count": 2,
+    "id": "foodmod:bagel"
+  }
+}

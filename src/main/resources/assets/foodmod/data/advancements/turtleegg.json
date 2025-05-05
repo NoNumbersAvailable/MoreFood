@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:fried_turtle_egg"
+    },
+    "title": "Don't even try",
+    "description": "Try to consume a fried turtle egg",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "task": {
+    "experience": 200
+  },
+  "parent": "foodmod:egg",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:fried_turtle_egg"
+
+
+
+          ]
+        }
+      }
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 85,
+  "experience": 0.35,
+  "ingredient": "minecraft:cocoa_beans",
+  "result": {
+    "id": "foodmod:cooked_cocoa_beans"
+  }
+}

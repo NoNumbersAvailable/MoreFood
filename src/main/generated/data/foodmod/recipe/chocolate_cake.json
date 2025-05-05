@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "foodmod:chocolate_bar",
+    "B": "minecraft:sugar",
+    "C": "minecraft:wheat",
+    "D": "minecraft:milk_bucket",
+    "E": "minecraft:egg"
+  },
+  "pattern": [
+    "ADA",
+    "BEB",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:chocolate_cake"
+  }
+}

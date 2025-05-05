@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:water_bucket",
+    "foodmod:rice"
+  ],
+  "result": {
+    "count": 4,
+    "id": "foodmod:rice_cake"
+  }
+}

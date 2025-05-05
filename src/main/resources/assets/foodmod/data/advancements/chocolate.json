@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:chocolate_bar"
+    },
+    "title": "Here's Your Bar",
+    "description": "Construct Chocolate",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "task": {
+    "experience": 20
+  },
+  "parent": "foodmod:cocoa",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "foodmod:chocolate_bar"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

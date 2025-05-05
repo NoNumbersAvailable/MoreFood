@@ -1,0 +1,82 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:fungus_stew"
+    },
+    "title": "The Netherlands",
+    "description": "Consume all Nether related Food",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 150
+  },
+  "parent": "foodmod:netherwart",
+  "criteria": {
+    "cooked_nether_wart": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_nether_wart"
+          ]
+        }
+      }
+    },
+    "nether_wart_soup": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:nether_wart_soup"
+          ]
+        }
+      }
+    },"cooked_crimson_fungus": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_crimson_fungus"
+          ]
+        }
+      }
+    },"cooked_warped_fungus": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_warped_fungus"
+          ]
+        }
+      }
+    },
+    "fungus_stew": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:fungus_stew"
+          ]
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

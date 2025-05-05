@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:chocolate_bar",
+    "minecraft:paper"
+  ],
+  "result": {
+    "count": 8,
+    "id": "foodmod:sweet_candy"
+  }
+}

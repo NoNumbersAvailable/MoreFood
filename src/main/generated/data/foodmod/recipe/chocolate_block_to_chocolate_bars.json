@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:chocolate_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "foodmod:chocolate_bar"
+  }
+}

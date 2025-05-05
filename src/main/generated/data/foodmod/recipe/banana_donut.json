@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:banana",
+    "minecraft:sugar",
+    "minecraft:wheat"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:banana_donut"
+  }
+}

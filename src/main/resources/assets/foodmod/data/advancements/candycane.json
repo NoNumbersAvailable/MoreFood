@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:candy_cane"
+    },
+    "title": "The Polar Express",
+    "description": "Construct a Candy Cane",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "task": {
+    "experience": 50
+  },
+  "parent": "foodmod:sugaroverload",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "foodmod:candy_cane"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

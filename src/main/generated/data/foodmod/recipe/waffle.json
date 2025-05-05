@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:milk_bucket",
+    "minecraft:sugar",
+    "minecraft:wheat",
+    "minecraft:egg"
+  ],
+  "result": {
+    "count": 2,
+    "id": "foodmod:waffle"
+  }
+}

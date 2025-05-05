@@ -1,0 +1,156 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:cooked_crimson_fungus"
+    },
+    "title": "We are the Champignons!",
+    "description": "Consume all Mushroom and Fungi related food",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 600
+  },
+  "parent": "foodmod:netherlands",
+  "criteria": {
+    "cooked_warped_fungus": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_warped_fungus"
+          ]
+        }
+      }
+    },
+    "cooked_crimson_fungus": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_crimson_fungus"
+          ]
+        }
+      }
+    },
+
+    "cooked_nether_wart": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_nether_wart"
+          ]
+        }
+      }
+    },
+    "nether_wart_soup": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:nether_wart_soup"
+          ]
+        }
+      }
+    },
+    "fish_stew": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:fish_stew"
+          ]
+        }
+      }
+    },
+    "meat_Stew": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:meat_stew"
+          ]
+        }
+      }
+    },
+    "mushroom_stew": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:mushroom_stew"
+          ]
+        }
+      }
+    },
+    "fungus_stew": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:fungus_stew"
+          ]
+        }
+      }
+    },
+    "cooked_brown_mushroom": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_brown_mushroom"
+          ]
+        }
+      }
+    },
+    "rabbit_stew": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:rabbit_stew"
+          ]
+        }
+      }
+    },
+    "suspicious_stew": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:suspicious_stew"
+          ]
+        }
+      }
+    },
+    "cooked_red_mushroom": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:cooked_red_mushroom"
+          ]
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

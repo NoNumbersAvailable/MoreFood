@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:melon_slice",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:melon_bubblegum"
+  }
+}

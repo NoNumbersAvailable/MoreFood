@@ -1,0 +1,116 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:cake"
+    },
+    "title": "Piefection!",
+    "description": "Consume every pie and cake",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 350
+  },
+  "parent": "foodmod:milk",
+  "criteria": {
+    "pumpkin_pie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:pumpkin_pie"
+          ]
+        }
+      }
+    },
+    "apple_pie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:apple_pie"
+          ]
+        }
+      }
+    },
+    "sweet_berry_pie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:sweet_berry_pie"
+          ]
+        }
+      }
+    },
+    "blue_berry_pie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:blue_berry_pie"
+          ]
+        }
+      }
+    },
+    "glow_berry_pie": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:glow_berry_pie"
+          ]
+        }
+      },
+      "chocolate_cake": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": [
+              "foodmod:chocolate_cake"
+            ]
+          }
+        }
+      },
+      "cake": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": [
+              "minecraft:cake"
+            ]
+          }
+        }
+      },
+      "melon_pie": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": [
+              "foodmod:melon_pie"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

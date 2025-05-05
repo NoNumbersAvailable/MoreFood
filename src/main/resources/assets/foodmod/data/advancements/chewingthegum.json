@@ -1,0 +1,103 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:golden_apple_bubblegum"
+    },
+    "title": "Chewing the Gum",
+    "description": "Chew every single Bubblegum",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "challenge": {
+    "experience": 350
+  },
+  "parent": "foodmod:bubblegum",
+  "criteria": {
+    "bubblegum": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:bubblegum"
+          ]
+        }
+      }
+    },
+    "apple_bubblegum": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:apple_bubblegum"
+          ]
+        }
+      }
+    },"mint_bubblegum": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:mint_bubblegum"
+          ]
+        }
+      }
+    },"blue_berry_bubblegum": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:blue_berry_bubblegum"
+          ]
+        }
+      }
+    },"golden_apple_bubblegum": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:golden_apple_bubblegum"
+          ]
+        }
+      }
+    },"glowberry_bubblegum": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:glow_berry_bubblegum"
+          ]
+        }
+      }
+    },"chorus_fruit_bubblegum": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:chorus_fruit_bubblegum"
+          ]
+        }
+      }
+    },"melon_bubblegum": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:melon_bubblegum"
+
+          ]
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+
+
+
+

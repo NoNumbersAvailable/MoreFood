@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "foodmod:block/rice_crop_block1"
+  }
+}

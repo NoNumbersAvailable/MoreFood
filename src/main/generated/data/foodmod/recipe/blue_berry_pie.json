@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:blue_berries",
+    "minecraft:sugar",
+    "minecraft:egg"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:blue_berry_pie"
+  }
+}

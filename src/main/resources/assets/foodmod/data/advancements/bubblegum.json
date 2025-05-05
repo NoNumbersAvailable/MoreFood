@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:bubblegum"
+    },
+    "title": "The Chew-Chew Train",
+    "description": "Eat your first Basic Bubblegum",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "task": {
+    "experience": 20
+  },
+  "parent": "foodmod:sugar",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "foodmod:bubblegum"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+
+
+
+

@@ -1,0 +1,119 @@
+{
+  "display": {
+    "icon": {
+      "item": "foodmod:sweet_berry_ice_cream"
+    },
+    "title": "Looking for the Scoop",
+    "description": "Consume every single Ice Cream",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "challenge": {
+    "experience": 400
+  },
+  "parent": "foodmod:donut",
+  "criteria": {
+    "ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:ice_cream"
+          ]
+        }
+      }
+    },
+    "apple_ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:apple_ice_cream"
+          ]
+        }
+      }
+    },"melon_ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:melon_ice_cream"
+          ]
+        }
+      }
+    },"sweet_berry_ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:sweet_berry_ice_cream"
+          ]
+        }
+      }
+    },"blue_berry_ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:blue_berry_ice_cream"
+          ]
+        }
+      }
+    },"glow_berry_ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:glow_berry_ice_cream"
+          ]
+        }
+      }
+    },"chorus_fruit_ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:chorus_fruit_ice_cream"
+          ]
+        }
+      }
+    },"sandwich_cookie_ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:sandwich_cookie_ice_cream"
+          ]
+        }
+      }
+    },"chocolate_ice_cream": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "foodmod:chocolate_ice_cream"
+
+          ]
+        }
+      }
+    }
+
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": "minecraft:red_dye",
+    "S": "minecraft:sugar"
+  },
+  "pattern": [
+    "RSR",
+    "S S",
+    "R  "
+  ],
+  "result": {
+    "count": 4,
+    "id": "foodmod:candy_cane"
+  }
+}

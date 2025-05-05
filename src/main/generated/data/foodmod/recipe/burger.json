@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:bread",
+    "minecraft:carrot",
+    [
+      "minecraft:cooked_beef",
+      "foodmod:cooked_flesh"
+    ],
+    "minecraft:beetroot",
+    "minecraft:bread"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:burger"
+  }
+}

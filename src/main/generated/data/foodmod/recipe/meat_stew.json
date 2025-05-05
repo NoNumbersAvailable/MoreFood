@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:cooked_porkchop",
+    "minecraft:cooked_chicken",
+    "minecraft:cooked_mutton",
+    "foodmod:cooked_flesh",
+    "minecraft:cooked_rabbit",
+    "foodmod:cooked_spider_eye",
+    "minecraft:cooked_beef",
+    [
+      "minecraft:red_mushroom",
+      "minecraft:brown_mushroom"
+    ],
+    "minecraft:bowl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:meat_stew"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": "minecraft:poisonous_potato",
+    "D": "minecraft:gold_ingot"
+  },
+  "pattern": [
+    "DDD",
+    "DBD",
+    "DDD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:golden_potato"
+  }
+}

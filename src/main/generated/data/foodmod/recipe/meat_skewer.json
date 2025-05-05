@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      "minecraft:cooked_beef",
+      "minecraft:cooked_chicken",
+      "minecraft:cooked_mutton",
+      "foodmod:cooked_flesh",
+      "foodmod:cooked_spider_eye",
+      "minecraft:cooked_porkchop",
+      "minecraft:cooked_rabbit"
+    ],
+    [
+      "minecraft:cooked_cod",
+      "minecraft:cooked_salmon",
+      "foodmod:cooked_pufferfish",
+      "foodmod:cooked_tropical_fish"
+    ],
+    "minecraft:stick"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:meat_skewer"
+  }
+}

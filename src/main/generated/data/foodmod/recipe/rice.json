@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:rice_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "foodmod:rice"
+  }
+}

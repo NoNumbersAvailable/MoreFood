@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:slice_of_cake",
+    "foodmod:slice_of_cake",
+    "foodmod:slice_of_cake",
+    "foodmod:slice_of_cake",
+    "foodmod:slice_of_cake",
+    "foodmod:slice_of_cake",
+    "foodmod:slice_of_cake"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:cake"
+  }
+}

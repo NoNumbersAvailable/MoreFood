@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:sweet_berries",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:bubblegum"
+  }
+}
