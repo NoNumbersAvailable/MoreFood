@@ -5,4 +5,4 @@
     <a  href="https://discord.com/invite/H7WWUz9wvN"><img src="https://img.shields.io/discord/1253112948868780082?color=5865f2&label=Discord&style=flat" alt="Discord"></a>
     <br><br>
 </h1>
-The MoreFood mod is a Minecraft mod that adds over 90 new food items, including crops, fruits, cooked dishes, fast food, desserts, snacks, and even a new villager and building blocks.
+The MoreFood mod is a Minecraft mod that adds +100 new food items, including crops, fruits, cooked dishes, fast food, desserts, snacks, and even a new villager and building blocks.
