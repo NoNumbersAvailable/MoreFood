@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:corn",
+    "minecraft:milk_bucket",
+    "minecraft:sugar",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:cornflakes"
+  }
+}

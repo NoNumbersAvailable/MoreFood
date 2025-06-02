@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:corn",
+    "minecraft:sugar",
+    "minecraft:paper"
+  ],
+  "result": {
+    "count": 4,
+    "id": "foodmod:popcorn"
+  }
+}

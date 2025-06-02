@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_corn_bale": {
+      "conditions": {
+        "items": [
+          {
+            "items": "foodmod:corn_bale"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:corn_bale_to_corn"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_corn_bale"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:corn_bale_to_corn"
+    ]
+  }
+}

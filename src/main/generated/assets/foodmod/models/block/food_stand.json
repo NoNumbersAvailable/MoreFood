@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "foodmod:block/food_stand_bottom",
+    "front": "foodmod:block/food_stand_front",
+    "side": "foodmod:block/food_stand_side",
+    "top": "foodmod:block/food_stand_top"
+  }
+}

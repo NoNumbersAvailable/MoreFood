@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "foodmod:block/corn_bale_top",
+    "side": "foodmod:block/corn_bale"
+  }
+}
