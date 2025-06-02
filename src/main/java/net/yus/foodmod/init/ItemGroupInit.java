@@ -17,13 +17,16 @@ public class ItemGroupInit {
                     .displayName(Text.translatable("itemgroup.foodmod.more_food_group"))
                     .entries((displayContext, entries) -> {
                 entries.add(BlockInit.CHOCOLATE_BLOCK);
+                entries.add(BlockInit.COCOA_BEANS_BLOCK);
                 entries.add(BlockInit.RICE_BLOCK);
                 entries.add(BlockInit.SUGAR_BLOCK);
                 entries.add(BlockInit.SUGAR_CANE_BALE);
+                entries.add(BlockInit.CORN_BALE);
                 entries.add(BlockInit.FOOD_STAND);
                 entries.add(Iteminit.RICE_SEEDS);
 
                 entries.add(Iteminit.RICE);
+                entries.add(Iteminit.CORN);
                 entries.add(Iteminit.PUMPKIN_SLICE);
                 entries.add(Iteminit.BLUE_BERRIES);
                 entries.add(Iteminit.BANANA);
@@ -84,6 +87,9 @@ public class ItemGroupInit {
                 entries.add(Iteminit.FRIED_TURTLE_EGG);
                 entries.add(Iteminit.FRIED_SNIFFER_EGG);
 
+                entries.add(Iteminit.COOKED_CORN);
+                entries.add(Iteminit.POPCORN);
+
                 entries.add(Iteminit.RICE_CAKE);
                 entries.add(Iteminit.RICE_BALLS);
                 entries.add(Iteminit.SUSHI);
@@ -99,6 +105,7 @@ public class ItemGroupInit {
                 entries.add(Iteminit.COOKED_TROPICAL_FISH);
                 entries.add(Iteminit.GOLDEN_POTATO);
 
+                entries.add(Iteminit.COOKED_BEETROOT);
                 entries.add(Iteminit.CACTUS_LEAF);
                 entries.add(Iteminit.COOKED_CACTUS_LEAF);
                 entries.add(Iteminit.COOKED_BAMBOO);
@@ -114,10 +121,12 @@ public class ItemGroupInit {
                 entries.add(Iteminit.COOKED_MARSHMALLOW);
                 entries.add(Iteminit.COTTON_CANDY);
                 entries.add(Iteminit.MEAT_SKEWER);
+                entries.add(Iteminit.CORN_DOG);
 
                 entries.add(Iteminit.BANANA_SPLIT);
                 entries.add(Iteminit.FRUIT_SALAD);
                 entries.add(Iteminit.RICE_PUDDING);
+                entries.add(Iteminit.CORNFLAKES);
                 entries.add(Iteminit.MEAT_STEW);
                 entries.add(Iteminit.FISH_STEW);
                 entries.add(Iteminit.PUMPKIN_SOUP);

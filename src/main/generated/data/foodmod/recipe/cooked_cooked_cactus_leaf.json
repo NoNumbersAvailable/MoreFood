@@ -3,8 +3,8 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 0.35,
-  "ingredient": "foodmod:cooked_cactus_leaf",
+  "ingredient": "foodmod:cactus_leaf",
   "result": {
-    "id": "foodmod:cooked_warped_fungus"
+    "id": "foodmod:cooked_cactus_leaf"
   }
 }

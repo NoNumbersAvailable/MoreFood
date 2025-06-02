@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.client.data.BlockStateModelGenerator;
 import net.minecraft.client.data.ItemModelGenerator;
 import net.minecraft.client.data.Models;
+import net.minecraft.client.data.TexturedModel;
 import net.yus.foodmod.init.BlockInit;
 import net.yus.foodmod.init.CustomBlocks.BlueBerryBush;
 import net.yus.foodmod.init.Iteminit;
@@ -22,7 +23,11 @@ public class FoodmodModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.CHOCOLATE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.RICE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.SUGAR_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.COCOA_BEANS_BLOCK);
 
+        blockStateModelGenerator.createLogTexturePool(BlockInit.SUGAR_CANE_BALE).log(BlockInit.SUGAR_CANE_BALE);
+        blockStateModelGenerator.createLogTexturePool(BlockInit.CORN_BALE).log(BlockInit.CORN_BALE);
+        blockStateModelGenerator.registerSingleton(BlockInit.FOOD_STAND, TexturedModel.ORIENTABLE_WITH_BOTTOM);
 
         blockStateModelGenerator.registerTintableCrossBlockStateWithStages(BlockInit.BLUE_BERRY_BUSH, BlockStateModelGenerator.CrossType.NOT_TINTED,
                 BlueBerryBush.AGE, 0, 1, 2, 3);
@@ -30,6 +35,12 @@ public class FoodmodModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(Iteminit.POPCORN, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.COOKED_BEETROOT, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.CORN_DOG, Models.HANDHELD);
+        itemModelGenerator.register(Iteminit.CORNFLAKES, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.COOKED_CORN, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.CORN, Models.GENERATED);
         itemModelGenerator.register(Iteminit.COOKED_CACTUS_LEAF, Models.GENERATED);
         itemModelGenerator.register(Iteminit.CACTUS_LEAF, Models.GENERATED);
         itemModelGenerator.register(Iteminit.RICE_SEEDS, Models.GENERATED);

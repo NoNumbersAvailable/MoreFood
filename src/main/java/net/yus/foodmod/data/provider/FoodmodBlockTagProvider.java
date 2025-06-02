@@ -19,13 +19,15 @@ public class FoodmodBlockTagProvider extends FabricTagProvider.BlockTagProvider 
 
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
                 .add(BlockInit.RICE_BLOCK)
-                .add(BlockInit.SUGAR_CANE_BALE);
+                .add(BlockInit.SUGAR_CANE_BALE)
+                .add(BlockInit.CORN_BALE);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(BlockInit.FOOD_STAND);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(BlockInit.SUGAR_BLOCK)
+                .add(BlockInit.COCOA_BEANS_BLOCK)
                 .add(BlockInit.CHOCOLATE_BLOCK);
 
 

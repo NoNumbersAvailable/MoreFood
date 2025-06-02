@@ -12,6 +12,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.yus.foodmod.init.CustomBlocks.BlueBerryBush;
+import net.yus.foodmod.init.CustomBlocks.CornCropBlock;
 import net.yus.foodmod.init.CustomBlocks.RiceCropBlock;
 
 
@@ -29,10 +30,20 @@ import net.yus.foodmod.init.CustomBlocks.RiceCropBlock;
                 new RiceCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "rice_crop_block")))
                         .sounds(BlockSoundGroup.CROP)));
 
+
+        public static final Block CORN_CROP_BLOCK = Registry.register(Registries.BLOCK, Identifier.of(Foodmod.MOD_ID, "corn_crop_block"),
+                new CornCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "corn_crop_block")))
+                        .sounds(BlockSoundGroup.CROP)));
+
         public static final Block CHOCOLATE_BLOCK = registerBlock("chocolate_block",
                 new Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "chocolate_block")))
                         .strength(0.75f)
                         .sounds(BlockSoundGroup.SNOW)));
+
+        public static final Block COCOA_BEANS_BLOCK = registerBlock("cocoa_beans_block",
+                new Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "cocoa_beans_block")))
+                        .strength(0.75f)
+                        .sounds(BlockSoundGroup.CHERRY_WOOD)));
 
         public static final Block SUGAR_BLOCK = registerBlock("sugar_block",
                 new Block(FallingBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "sugar_block")))
@@ -54,10 +65,15 @@ import net.yus.foodmod.init.CustomBlocks.RiceCropBlock;
                         .strength(0.5f)
                         .sounds(BlockSoundGroup.GRASS)));
 
+        public static final Block CORN_BALE = registerBlock("corn_bale",
+                new PillarBlock(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "corn_bale")))
+                        .strength(0.5f)
+                        .sounds(BlockSoundGroup.AZALEA)));
+
         public static final Block FOOD_STAND = registerBlock("food_stand",
                 new Block(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "food_stand")))
                         .strength(3.75f)
-                        .sounds(BlockSoundGroup.WOOD)));
+                        .sounds(BlockSoundGroup.CHERRY_WOOD)));
 
         private static Block registerBlock(String name, Block block) {
             registerBlockItem(name, block);

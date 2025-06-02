@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cooked_cactus_leaf": {
+    "has_cactus_leaf": {
       "conditions": {
         "items": [
           {
-            "items": "foodmod:cooked_cactus_leaf"
+            "items": "foodmod:cactus_leaf"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cooked_cactus_leaf"
+      "has_cactus_leaf"
     ]
   ],
   "rewards": {

@@ -47,6 +47,11 @@ public class Foodmod implements ModInitializer {
                     16, 2, 0.05f));
 
             factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Iteminit.CORN, 15),
+                    new ItemStack(Items.EMERALD, 1),
+                    16, 2, 0.05f));
+
+            factories.add((entity, random) -> new TradeOffer(
                     new TradedItem(Iteminit.BLUE_BERRIES, 15),
                     new ItemStack(Items.EMERALD, 1),
                     16, 2, 0.05f));

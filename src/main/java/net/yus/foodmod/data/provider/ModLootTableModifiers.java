@@ -27,6 +27,9 @@ public class ModLootTableModifiers {
     private static final Identifier FERN_BLOCK_ID
             = Identifier.of("minecraft", "blocks/fern");
 
+    private static final Identifier TALL_GRASS_ID
+            = Identifier.of("minecraft", "blocks/tall_grass");
+
 
 
     private static final Identifier TRAILRUIN_ID
@@ -77,6 +80,9 @@ public class ModLootTableModifiers {
     private static final Identifier VILLAGE_STRUCTURE_SNOWY_HOUSE_ID
             = Identifier.of("minecraft", "chests/village/village_snowy_house");
 
+    private static final Identifier VILLAGE_STRUCTURE_SAVANNA_HOUSE_ID
+            = Identifier.of("minecraft", "chests/village/village_savanna_house");
+
     private static final Identifier ABANDONED_STRUCTURE_MINESHAFT_ID
             = Identifier.of("minecraft", "chests/abandoned_mineshaft");
 
@@ -108,6 +114,14 @@ public class ModLootTableModifiers {
                     tableBuilder.pool(poolBuilder.build());
                 }
 
+                if(source.isBuiltin() && TALL_GRASS_ID.equals(key.getValue())) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(ConstantLootNumberProvider.create(1))
+                            .conditionally(RandomChanceLootCondition.builder(0.03f))
+                            .with(ItemEntry.builder(Iteminit.CORN))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
 
                     if(source.isBuiltin() && FERN_BLOCK_ID.equals(key.getValue())) {
                         LootPool.Builder poolBuilder = LootPool.builder()
@@ -230,6 +244,14 @@ public class ModLootTableModifiers {
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
+                if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(ConstantLootNumberProvider.create(1))
+                            .conditionally(RandomChanceLootCondition.builder(0.3f))
+                            .with(ItemEntry.builder(Iteminit.CORN))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
                 if(source.isBuiltin() && RUINED_PORTAL_STRUCTURE_ID.equals(key.getValue())) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(ConstantLootNumberProvider.create(1))
@@ -292,6 +314,14 @@ public class ModLootTableModifiers {
                             .conditionally(RandomChanceLootCondition.builder(0.5f))
                             .with(ItemEntry.builder(Iteminit.CANDY_CANE))
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
+                if(source.isBuiltin() && IGLOO_STRUCTURE_CHEST_ID.equals(key.getValue())) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(ConstantLootNumberProvider.create(1))
+                            .conditionally(RandomChanceLootCondition.builder(0.3f))
+                            .with(ItemEntry.builder(Iteminit.COOKED_CORN))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
                 if(source.isBuiltin() && IGLOO_STRUCTURE_CHEST_ID.equals(key.getValue())) {
@@ -434,6 +464,22 @@ public class ModLootTableModifiers {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(ConstantLootNumberProvider.create(1))
                             .conditionally(RandomChanceLootCondition.builder(0.3f))
+                            .with(ItemEntry.builder(Iteminit.CORN))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
+                if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(ConstantLootNumberProvider.create(1))
+                            .conditionally(RandomChanceLootCondition.builder(0.2f))
+                            .with(ItemEntry.builder(Iteminit.CORNFLAKES))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
+                if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(ConstantLootNumberProvider.create(1))
+                            .conditionally(RandomChanceLootCondition.builder(0.3f))
                             .with(ItemEntry.builder(Iteminit.CHOCOLATE_BAR))
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 6.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
@@ -460,6 +506,14 @@ public class ModLootTableModifiers {
                             .rolls(ConstantLootNumberProvider.create(1))
                             .conditionally(RandomChanceLootCondition.builder(0.2f))
                             .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
+                if(source.isBuiltin() && ABANDONED_STRUCTURE_MINESHAFT_ID.equals(key.getValue())) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(ConstantLootNumberProvider.create(1))
+                            .conditionally(RandomChanceLootCondition.builder(0.2f))
+                            .with(ItemEntry.builder(Iteminit.CORN))
                             .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
@@ -512,6 +566,14 @@ public class ModLootTableModifiers {
                     tableBuilder.pool(poolBuilder.build());
                 }
                 if(source.isBuiltin() && VILLAGE_STRUCTURE_PLAINS_HOUSE_ID.equals(key.getValue())) {
+                    LootPool.Builder poolBuilder = LootPool.builder()
+                            .rolls(ConstantLootNumberProvider.create(1))
+                            .conditionally(RandomChanceLootCondition.builder(0.4f))
+                            .with(ItemEntry.builder(Iteminit.CORN))
+                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                    tableBuilder.pool(poolBuilder.build());
+                }
+                if(source.isBuiltin() && VILLAGE_STRUCTURE_SAVANNA_HOUSE_ID.equals(key.getValue())) {
                     LootPool.Builder poolBuilder = LootPool.builder()
                             .rolls(ConstantLootNumberProvider.create(1))
                             .conditionally(RandomChanceLootCondition.builder(0.4f))

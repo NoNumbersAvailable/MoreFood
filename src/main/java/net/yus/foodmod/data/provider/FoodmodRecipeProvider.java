@@ -34,6 +34,32 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Iteminit.CHOCOLATE_BAR), conditionsFromItem(Iteminit.CHOCOLATE_BAR))
                     .offerTo(exporter);
 
+                createShaped(RecipeCategory.DECORATIONS, BlockInit.CORN_BALE)
+                       .input('E', Iteminit.CORN)
+                        .pattern("EEE")
+                        .pattern("EEE")
+                        .pattern("EEE")
+                        .criterion(hasItem(Iteminit.CORN), conditionsFromItem(Iteminit.CORN))
+                        .offerTo(exporter);
+
+                createShaped(RecipeCategory.DECORATIONS, BlockInit.COCOA_BEANS_BLOCK)
+                        .input('E', Items.COCOA_BEANS)
+                        .pattern("EEE")
+                        .pattern("EEE")
+                        .pattern("EEE")
+                        .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Items.COCOA_BEANS, 9)
+                        .input(BlockInit.CORN_BALE)
+                        .criterion("has_cocoa_beans_block", conditionsFromItem(BlockInit.COCOA_BEANS_BLOCK))
+                        .offerTo(exporter, "cocoa_beans_block_to_cocoa_beans");
+
+                createShapeless(RecipeCategory.MISC, Iteminit.CORN, 9)
+                        .input(BlockInit.CORN_BALE)
+                        .criterion("has_corn_bale", conditionsFromItem(BlockInit.CORN_BALE))
+                        .offerTo(exporter, "corn_bale_to_corn");
+
         createShapeless(RecipeCategory.MISC, Iteminit.CHOCOLATE_BAR, 9)
                     .input(BlockInit.CHOCOLATE_BLOCK)
                 .criterion("has_chocolate_block", conditionsFromItem(BlockInit.CHOCOLATE_BLOCK))
@@ -111,6 +137,14 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.APPLE), conditionsFromItem(Items.APPLE))
                     .offerTo(exporter);
 
+
+                createShapeless(RecipeCategory.MISC, Iteminit.POPCORN, 4)
+                        .input(Iteminit.CORN)
+                        .input(Items.SUGAR)
+                        .input(Items.PAPER)
+                        .criterion(hasItem(Iteminit.CORN), conditionsFromItem(Iteminit.CORN))
+                        .offerTo(exporter);
+
                 createShapeless(RecipeCategory.MISC, Iteminit.APPLE_ICE_CREAM, 4)
                     .input(Items.APPLE)
                         .input(Items.SNOWBALL)
@@ -127,6 +161,15 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.APPLE), conditionsFromItem(Items.APPLE))
                     .offerTo(exporter);
 
+
+                    createShapeless(RecipeCategory.MISC, Iteminit.CORNFLAKES, 1)
+                            .input(Iteminit.CORN)
+                            .input(Items.MILK_BUCKET)
+                            .input(Items.SUGAR)
+                            .input(Items.BOWL)
+                            .criterion(hasItem(Iteminit.CORN), conditionsFromItem(Iteminit.CORN))
+                            .offerTo(exporter);
+
                 createShaped(RecipeCategory.MISC, Iteminit.BAGEL, 2)
                     .input('E', Items.WHEAT)
                 .input('W', Items.EGG)
@@ -142,6 +185,8 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 .input(Items.WHEAT)
                 .criterion(hasItem(Iteminit.BANANA), conditionsFromItem(Iteminit.BANANA))
                     .offerTo(exporter);
+
+
 
                     createShapeless(RecipeCategory.MISC, Iteminit.CACTUS_LEAF, 3)
                             .input(Items.CACTUS)
@@ -432,6 +477,13 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BEEF), conditionsFromItem(Items.BEEF))
                     .offerTo(exporter);
 
+                createShapeless(RecipeCategory.MISC, Iteminit.CORN_DOG, 1)
+                        .input(Iteminit.CORN)
+                        .input(Ingredient.ofItems(Items.COOKED_COD, Items.COOKED_SALMON,Iteminit.COOKED_PUFFERFISH,Iteminit.COOKED_TROPICAL_FISH,Items.COOKED_BEEF, Items.COOKED_CHICKEN,Items.COOKED_MUTTON,Iteminit.COOKED_FLESH,Iteminit.COOKED_SPIDER_EYE,Items.COOKED_PORKCHOP,Items.COOKED_RABBIT))
+                        .input(Items.STICK)
+                        .criterion(hasItem(Iteminit.CORN), conditionsFromItem(Iteminit.CORN))
+                        .offerTo(exporter);
+
                 createShapeless(RecipeCategory.MISC, Iteminit.MELON_BUBBLEGUM, 1)
                     .input(Items.MELON_SLICE)
                 .input(Items.SUGAR)
@@ -673,7 +725,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.RED_MUSHROOM), conditionsFromItem(Items.RED_MUSHROOM))
                     .offerTo(exporter, "smoking_cooked_red_mushroom");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.RED_MUSHROOM), RecipeCategory.FOOD, Iteminit.COOKED_RED_MUSHROOM, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.RED_MUSHROOM), RecipeCategory.FOOD, Iteminit.COOKED_RED_MUSHROOM, 0.35f, 600)
                     .criterion(hasItem(Items.RED_MUSHROOM), conditionsFromItem(Items.RED_MUSHROOM))
                     .offerTo(exporter, "campfire_cooked_red_mushroom");
 
@@ -685,7 +737,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.BROWN_MUSHROOM), conditionsFromItem(Items.BROWN_MUSHROOM))
                     .offerTo(exporter, "smoking_cooked_brown_mushroom");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.BROWN_MUSHROOM), RecipeCategory.FOOD, Iteminit.COOKED_BROWN_MUSHROOM, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.BROWN_MUSHROOM), RecipeCategory.FOOD, Iteminit.COOKED_BROWN_MUSHROOM, 0.35f, 600)
                     .criterion(hasItem(Items.BROWN_MUSHROOM), conditionsFromItem(Items.BROWN_MUSHROOM))
                     .offerTo(exporter, "campfire_cooked_brown_mushroom");
 
@@ -697,7 +749,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.NETHER_WART), conditionsFromItem(Items.NETHER_WART))
                     .offerTo(exporter, "smoking_cooked_nether_wart");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.NETHER_WART), RecipeCategory.FOOD, Iteminit.COOKED_NETHER_WART, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.NETHER_WART), RecipeCategory.FOOD, Iteminit.COOKED_NETHER_WART, 0.35f, 600)
                     .criterion(hasItem(Items.NETHER_WART), conditionsFromItem(Items.NETHER_WART))
                     .offerTo(exporter, "campfire_cooked_nether_wart");
 
@@ -709,7 +761,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.WARPED_FUNGUS), conditionsFromItem(Items.WARPED_FUNGUS))
                     .offerTo(exporter, "smoking_cooked_warped_fungus");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.WARPED_FUNGUS), RecipeCategory.FOOD, Iteminit.COOKED_WARPED_FUNGUS, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.WARPED_FUNGUS), RecipeCategory.FOOD, Iteminit.COOKED_WARPED_FUNGUS, 0.35f, 600)
                     .criterion(hasItem(Items.WARPED_FUNGUS), conditionsFromItem(Items.WARPED_FUNGUS))
                     .offerTo(exporter, "campfire_cooked_warped_fungus");
 
@@ -723,7 +775,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.CRIMSON_FUNGUS), conditionsFromItem(Items.CRIMSON_FUNGUS))
                     .offerTo(exporter, "smoking_cooked_crimson_fungus");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.CRIMSON_FUNGUS), RecipeCategory.FOOD, Iteminit.COOKED_CRIMSON_FUNGUS, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.CRIMSON_FUNGUS), RecipeCategory.FOOD, Iteminit.COOKED_CRIMSON_FUNGUS, 0.35f, 600)
                     .criterion(hasItem(Items.CRIMSON_FUNGUS), conditionsFromItem(Items.CRIMSON_FUNGUS))
                     .offerTo(exporter, "campfire_cooked_crimson_fungus");
 
@@ -735,7 +787,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.ROTTEN_FLESH), conditionsFromItem(Items.ROTTEN_FLESH))
                     .offerTo(exporter, "smoking_cooked_flesh");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.ROTTEN_FLESH), RecipeCategory.FOOD, Iteminit.COOKED_FLESH, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.ROTTEN_FLESH), RecipeCategory.FOOD, Iteminit.COOKED_FLESH, 0.35f, 600)
                     .criterion(hasItem(Items.ROTTEN_FLESH), conditionsFromItem(Items.ROTTEN_FLESH))
                     .offerTo(exporter, "campfire_cooked_flesh");
 
@@ -747,21 +799,45 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.SPIDER_EYE), conditionsFromItem(Items.SPIDER_EYE))
                     .offerTo(exporter, "smoking_cooked_spider_eye");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.SPIDER_EYE), RecipeCategory.FOOD, Iteminit.COOKED_SPIDER_EYE, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.SPIDER_EYE), RecipeCategory.FOOD, Iteminit.COOKED_SPIDER_EYE, 0.35f, 600)
                     .criterion(hasItem(Items.SPIDER_EYE), conditionsFromItem(Items.SPIDER_EYE))
                     .offerTo(exporter, "campfire_cooked_spider_eye");
 
-                    CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Iteminit.COOKED_CACTUS_LEAF), RecipeCategory.FOOD, Iteminit.COOKED_WARPED_FUNGUS, 0.35f, 200)
-                            .criterion(hasItem(Iteminit.COOKED_CACTUS_LEAF), conditionsFromItem(Iteminit.COOKED_CACTUS_LEAF))
+                    CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Iteminit.CORN), RecipeCategory.FOOD, Iteminit.COOKED_CORN, 0.35f, 200)
+                            .criterion(hasItem(Iteminit.CORN), conditionsFromItem(Iteminit.CORN))
+                            .offerTo(exporter, "smelting_cooked_corn");
+
+                    CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Iteminit.CORN), RecipeCategory.FOOD, Iteminit.COOKED_CORN, 0.35f, 100)
+                            .criterion(hasItem(Iteminit.CORN), conditionsFromItem(Iteminit.CORN))
+                            .offerTo(exporter, "smoking_cooked_corn");
+
+                    CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Iteminit.CORN), RecipeCategory.FOOD, Iteminit.COOKED_CORN, 0.35f, 600)
+                            .criterion(hasItem(Iteminit.CORN), conditionsFromItem(Iteminit.CORN))
+                            .offerTo(exporter, "campfire_cooked_corn");
+
+                    CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Iteminit.CACTUS_LEAF), RecipeCategory.FOOD, Iteminit.COOKED_CACTUS_LEAF, 0.35f, 200)
+                            .criterion(hasItem(Iteminit.CACTUS_LEAF), conditionsFromItem(Iteminit.CACTUS_LEAF))
                             .offerTo(exporter, "cooked_cooked_cactus_leaf");
 
-                    CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Iteminit.COOKED_CACTUS_LEAF), RecipeCategory.FOOD, Iteminit.COOKED_WARPED_FUNGUS, 0.35f, 100)
-                            .criterion(hasItem(Iteminit.COOKED_CACTUS_LEAF), conditionsFromItem(Iteminit.COOKED_CACTUS_LEAF))
+                    CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Iteminit.CACTUS_LEAF), RecipeCategory.FOOD, Iteminit.COOKED_CACTUS_LEAF, 0.35f, 100)
+                            .criterion(hasItem(Iteminit.CACTUS_LEAF), conditionsFromItem(Iteminit.CACTUS_LEAF))
                             .offerTo(exporter, "smoking_cooked_cactus_leaf");
 
-                    CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Iteminit.COOKED_CACTUS_LEAF), RecipeCategory.FOOD, Iteminit.COOKED_WARPED_FUNGUS, 0.35f, 250)
-                            .criterion(hasItem(Iteminit.COOKED_CACTUS_LEAF), conditionsFromItem(Iteminit.COOKED_CACTUS_LEAF))
+                    CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Iteminit.CACTUS_LEAF), RecipeCategory.FOOD, Iteminit.COOKED_CACTUS_LEAF, 0.35f, 600)
+                            .criterion(hasItem(Iteminit.CACTUS_LEAF), conditionsFromItem(Iteminit.CACTUS_LEAF))
                             .offerTo(exporter, "campfire_cooked_cactus_leaf");
+
+                CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.BEETROOT), RecipeCategory.FOOD, Iteminit.COOKED_BEETROOT, 0.35f, 200)
+                        .criterion(hasItem(Items.BEETROOT), conditionsFromItem(Items.BEETROOT))
+                        .offerTo(exporter, "cooked_cooked_beetroot");
+
+                CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Items.BEETROOT), RecipeCategory.FOOD, Iteminit.COOKED_BEETROOT, 0.35f, 100)
+                        .criterion(hasItem(Items.BEETROOT), conditionsFromItem(Items.BEETROOT))
+                        .offerTo(exporter, "smoking_cooked_beetroot");
+
+                CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.BEETROOT), RecipeCategory.FOOD, Iteminit.COOKED_BEETROOT, 0.35f, 600)
+                        .criterion(hasItem(Items.BEETROOT), conditionsFromItem(Items.BEETROOT))
+                        .offerTo(exporter, "campfire_cooked_beetroot");
 
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.TROPICAL_FISH), RecipeCategory.FOOD, Iteminit.COOKED_TROPICAL_FISH, 0.35f, 200)
                     .criterion(hasItem(Items.TROPICAL_FISH), conditionsFromItem(Items.TROPICAL_FISH))
@@ -771,7 +847,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.TROPICAL_FISH), conditionsFromItem(Items.TROPICAL_FISH))
                     .offerTo(exporter, "smoking_cooked_tropical_fish");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.TROPICAL_FISH), RecipeCategory.FOOD, Iteminit.COOKED_TROPICAL_FISH, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.TROPICAL_FISH), RecipeCategory.FOOD, Iteminit.COOKED_TROPICAL_FISH, 0.35f, 600)
                     .criterion(hasItem(Items.TROPICAL_FISH), conditionsFromItem(Items.TROPICAL_FISH))
                     .offerTo(exporter, "campfire_cooked_tropical_fish");
 
@@ -783,7 +859,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.PUFFERFISH), conditionsFromItem(Items.PUFFERFISH))
                     .offerTo(exporter, "smoking_cooked_pufferfish");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.PUFFERFISH), RecipeCategory.FOOD, Iteminit.COOKED_PUFFERFISH, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.PUFFERFISH), RecipeCategory.FOOD, Iteminit.COOKED_PUFFERFISH, 0.35f, 600)
                     .criterion(hasItem(Items.PUFFERFISH), conditionsFromItem(Items.PUFFERFISH))
                     .offerTo(exporter, "campfire_cooked_pufferfish");
 
@@ -795,7 +871,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.EGG), conditionsFromItem(Items.EGG))
                     .offerTo(exporter, "smoking_fried_egg");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 600)
                     .criterion(hasItem(Items.EGG), conditionsFromItem(Items.EGG))
                     .offerTo(exporter, "campfire_fried_egg");
 
@@ -807,7 +883,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.SNIFFER_EGG), conditionsFromItem(Items.SNIFFER_EGG))
                     .offerTo(exporter, "smoking_fried_sniffer_egg");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.SNIFFER_EGG), RecipeCategory.FOOD, Iteminit.FRIED_SNIFFER_EGG, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.SNIFFER_EGG), RecipeCategory.FOOD, Iteminit.FRIED_SNIFFER_EGG, 0.35f, 600)
                     .criterion(hasItem(Items.SNIFFER_EGG), conditionsFromItem(Items.SNIFFER_EGG))
                     .offerTo(exporter, "campfire_fried_sniffer_egg");
 
@@ -819,11 +895,11 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.TURTLE_EGG), conditionsFromItem(Items.TURTLE_EGG))
                     .offerTo(exporter, "smoking_fried_turtle_egg");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.TURTLE_EGG), RecipeCategory.FOOD, Iteminit.FRIED_TURTLE_EGG, 0.35f, 250)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.TURTLE_EGG), RecipeCategory.FOOD, Iteminit.FRIED_TURTLE_EGG, 0.35f, 600)
                     .criterion(hasItem(Items.TURTLE_EGG), conditionsFromItem(Items.TURTLE_EGG))
                     .offerTo(exporter, "campfire_fried_turtle_egg");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Iteminit.MARSHMALLOW), RecipeCategory.FOOD, Iteminit.COOKED_MARSHMALLOW, 0.35f, 150)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Iteminit.MARSHMALLOW), RecipeCategory.FOOD, Iteminit.COOKED_MARSHMALLOW, 0.35f, 100)
                     .criterion(hasItem(Iteminit.MARSHMALLOW), conditionsFromItem(Iteminit.MARSHMALLOW))
                     .offerTo(exporter, "campfire_cooked_marshmallow");
         }

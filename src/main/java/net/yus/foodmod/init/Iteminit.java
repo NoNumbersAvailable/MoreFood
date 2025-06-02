@@ -307,7 +307,20 @@ public class Iteminit {
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "fried_sniffer_egg")))
                     .food(FoodList.FRIED_SNIFFER_EGG, FoodList.FRIED_SNIFFER_EGG_EFFECT)));
 
+    public static final Item CORN = registerItem("corn",
+            new BlockItem(BlockInit.CORN_CROP_BLOCK, new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "corn")))
+                    .food(FoodList.CORN)));
 
+    public static final Item COOKED_CORN = registerItem("cooked_corn",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "cooked_corn")))
+                    .food(FoodList.COOKED_CORN)));
+
+    public static final Item POPCORN = registerItem("popcorn",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "popcorn")))
+                    .food(FoodList.POPCORN, FoodList.POPCORN_EFFECT)));
 
     public static final Item RICE = registerItem("rice",
             new Item(new Item.Settings()
@@ -354,6 +367,11 @@ public class Iteminit {
             new Item(new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "golden_potato")))
                     .food(FoodList.GOLDEN_POTATO, FoodList.GOLDEN_POTATO_EFFECT)));
+
+    public static final Item COOKED_BEETROOT = registerItem("cooked_beetroot",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "cooked_beetroot")))
+                    .food(FoodList.COOKED_BEETROOT)));
 
     public static final Item CACTUS_LEAF = registerItem("cactus_leaf",
             new Item(new Item.Settings()
@@ -430,6 +448,12 @@ public class Iteminit {
                     .food(FoodList.MEAT_SKEWER)
                     .useRemainder(STICK)));
 
+    public static final Item CORN_DOG = registerItem("corn_dog",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "corn_dog")))
+                    .food(FoodList.CORN_DOG)
+                    .useRemainder(STICK)));
+
 
     public static final Item BANANA_SPLIT = registerItem("banana_split",
             new Item(new Item.Settings()
@@ -452,6 +476,12 @@ public class Iteminit {
                     .maxCount(1)
                     .useRemainder(BOWL)));
 
+    public static final Item CORNFLAKES = registerItem("cornflakes",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "cornflakes")))
+                    .food(FoodList.CORNFLAKES)
+                    .maxCount(1)
+                    .useRemainder(BOWL)));
 
     public static final Item MEAT_STEW = registerItem("meat_stew",
             new Item(new Item.Settings()

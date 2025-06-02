@@ -17,6 +17,7 @@ public class FoodmodBlockLootTableProvider extends FabricBlockLootTableProvider 
         addDrop(BlockInit.CHOCOLATE_BLOCK);
         addDrop(BlockInit.SUGAR_BLOCK);
         addDrop(BlockInit.SUGAR_CANE_BALE);
+        addDrop(BlockInit.CORN_BALE );
         addDrop(BlockInit.RICE_BLOCK);
         addDrop(BlockInit.FOOD_STAND);
     }

@@ -19,6 +19,12 @@ public class FoodList {
     public static final FoodComponent PUMPKIN_SLICE = (new FoodComponent.Builder())
             .nutrition(3).saturationModifier(0.6f).build();
 
+    public static final FoodComponent COOKED_BEETROOT = (new FoodComponent.Builder())
+            .nutrition(5).saturationModifier(0.6f).build();
+
+    public static final FoodComponent CORN_DOG = (new FoodComponent.Builder())
+            .nutrition(8).saturationModifier(0.6f).build();
+
     public static final FoodComponent HOTDOG = (new FoodComponent.Builder())
             .nutrition(5).saturationModifier(0.6f).build();
 
@@ -86,7 +92,13 @@ public class FoodList {
             .nutrition(8).saturationModifier(0.8F).build();
 
     public static final FoodComponent RICE = (new FoodComponent.Builder())
-            .nutrition(2).saturationModifier(0.3F).build();
+            .nutrition(1).saturationModifier(0.3F).build();
+
+    public static final FoodComponent CORN = (new FoodComponent.Builder())
+            .nutrition(2).saturationModifier(0.4F).build();
+
+    public static final FoodComponent COOKED_CORN = (new FoodComponent.Builder())
+            .nutrition(4).saturationModifier(1.2F).build();
 
     public static final FoodComponent WAFFLE = (new FoodComponent.Builder())
             .nutrition(6).saturationModifier(0.6F).build();
@@ -270,6 +282,12 @@ public class FoodList {
     public static final ConsumableComponent RICE_CAKE_EFFECT = ConsumableComponents.food()
             .consumeSeconds(0.8F).build();
 
+    public static final FoodComponent POPCORN = new FoodComponent.Builder()
+            .nutrition(1).saturationModifier(0.1F).alwaysEdible().build();
+
+    public static final ConsumableComponent POPCORN_EFFECT = ConsumableComponents.food()
+            .consumeSeconds(0.8F).build();
+
     public static final FoodComponent CANDY_CANE = new FoodComponent.Builder()
             .nutrition(3).saturationModifier(0.1F).alwaysEdible().build();
 
@@ -396,6 +414,9 @@ public class FoodList {
 
     public static final FoodComponent RICE_PUDDING = (new FoodComponent.Builder())
             .nutrition(10).saturationModifier(0.6f).build();
+
+    public static final FoodComponent CORNFLAKES = (new FoodComponent.Builder())
+            .nutrition(6).saturationModifier(0.6f).build();
 
     public static final FoodComponent FRUIT_SALAD = new FoodComponent.Builder()
             .nutrition(16).saturationModifier(1.2F).alwaysEdible().build();
