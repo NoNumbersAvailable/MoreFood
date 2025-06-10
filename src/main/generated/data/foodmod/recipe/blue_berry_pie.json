@@ -4,7 +4,11 @@
   "ingredients": [
     "foodmod:blue_berries",
     "minecraft:sugar",
-    "minecraft:egg"
+    [
+      "minecraft:egg",
+      "minecraft:blue_egg",
+      "minecraft:brown_egg"
+    ]
   ],
   "result": {
     "count": 1,

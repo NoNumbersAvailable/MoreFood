@@ -157,10 +157,9 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 createShapeless(RecipeCategory.MISC, Iteminit.APPLE_PIE, 1)
                     .input(Items.APPLE)
                 .input(Items.SUGAR)
-                .input(Items.EGG)
+                .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
                 .criterion(hasItem(Items.APPLE), conditionsFromItem(Items.APPLE))
                     .offerTo(exporter);
-
 
                     createShapeless(RecipeCategory.MISC, Iteminit.CORNFLAKES, 1)
                             .input(Iteminit.CORN)
@@ -172,7 +171,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
 
                 createShaped(RecipeCategory.MISC, Iteminit.BAGEL, 2)
                     .input('E', Items.WHEAT)
-                .input('W', Items.EGG)
+                        .input('W', Ingredient.ofItems(Items.EGG, Items.BLUE_EGG, Items.BROWN_EGG))
                 .pattern("EEE")
                 .pattern("EWE")
                 .pattern("EEE")
@@ -245,7 +244,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 createShapeless(RecipeCategory.MISC, Iteminit.BLUE_BERRY_PIE, 1)
                     .input(Iteminit.BLUE_BERRIES)
                 .input(Items.SUGAR)
-                .input(Items.EGG)
+                        .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
                 .criterion(hasItem(Iteminit.BLUE_BERRIES), conditionsFromItem(Iteminit.BLUE_BERRIES))
                     .offerTo(exporter);
 
@@ -253,7 +252,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .input(Iteminit.CHOCOLATE_BAR)
                 .input(Items.SUGAR)
                 .input(Items.MILK_BUCKET)
-                .input(Items.EGG)
+                        .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
                 .input(Items.WHEAT)
                 .criterion(hasItem(Iteminit.CHOCOLATE_BAR), conditionsFromItem(Iteminit.CHOCOLATE_BAR))
                     .offerTo(exporter);
@@ -281,7 +280,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.MISC, Iteminit.CHOCOLATE_CAKE, 1)
                     .input('D', Items.MILK_BUCKET)
                 .input('B', Items.SUGAR)
-                .input('E', Items.EGG)
+                        .input('E', Ingredient.ofItems(Items.EGG, Items.BLUE_EGG, Items.BROWN_EGG))
                 .input('C', Items.WHEAT)
                 .input('A', Iteminit.CHOCOLATE_BAR)
                 .pattern("ADA")
@@ -404,7 +403,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 createShapeless(RecipeCategory.MISC, Iteminit.GLOW_BERRY_PIE, 1)
                     .input(Items.GLOW_BERRIES)
                 .input(Items.SUGAR)
-                .input(Items.EGG)
+                        .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
                 .criterion(hasItem(Items.GLOW_BERRIES), conditionsFromItem(Items.GLOW_BERRIES))
                     .offerTo(exporter);
 
@@ -502,7 +501,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 createShapeless(RecipeCategory.MISC, Iteminit.MELON_PIE, 1)
                     .input(Items.MELON)
                 .input(Items.SUGAR)
-                .input(Items.EGG)
+                        .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
                 .criterion(hasItem(Items.MELON), conditionsFromItem(Items.MELON))
                     .offerTo(exporter);
 
@@ -520,7 +519,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 createShapeless(RecipeCategory.MISC, Iteminit.PANCAKE, 3)
                     .input(Items.MILK_BUCKET)
                 .input(Items.WHEAT)
-                .input(Items.EGG)
+                        .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
                 .input(Iteminit.CHOCOLATE_BAR)
                 .criterion(hasItem(Items.EGG), conditionsFromItem(Items.EGG))
                     .offerTo(exporter);
@@ -621,7 +620,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 createShapeless(RecipeCategory.MISC, Iteminit.SWEET_BERRY_PIE, 1)
                     .input(Items.SWEET_BERRIES)
                 .input(Items.SUGAR)
-                .input(Items.EGG)
+                        .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
                 .criterion(hasItem(Items.SWEET_BERRIES), conditionsFromItem(Items.SWEET_BERRIES))
                     .offerTo(exporter);
 
@@ -635,7 +634,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .input(Items.MILK_BUCKET)
                 .input(Items.SUGAR)
                 .input(Items.WHEAT)
-                .input(Items.EGG)
+                        .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
                 .criterion(hasItem(Items.MILK_BUCKET), conditionsFromItem(Items.MILK_BUCKET))
                     .offerTo(exporter);
 
@@ -898,6 +897,31 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
         CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.TURTLE_EGG), RecipeCategory.FOOD, Iteminit.FRIED_TURTLE_EGG, 0.35f, 600)
                     .criterion(hasItem(Items.TURTLE_EGG), conditionsFromItem(Items.TURTLE_EGG))
                     .offerTo(exporter, "campfire_fried_turtle_egg");
+
+                CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.BLUE_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 200)
+                        .criterion(hasItem(Items.BLUE_EGG), conditionsFromItem(Items.BLUE_EGG))
+                        .offerTo(exporter, "smelting_fried_blue_egg");
+
+                CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Items.BLUE_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 100)
+                        .criterion(hasItem(Items.BLUE_EGG), conditionsFromItem(Items.BLUE_EGG))
+                        .offerTo(exporter, "smoking_fried_blue_egg");
+
+                CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.BLUE_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 600)
+                        .criterion(hasItem(Items.BLUE_EGG), conditionsFromItem(Items.BLUE_EGG))
+                        .offerTo(exporter, "campfire_fried_blue_egg");
+
+
+                CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.BROWN_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 200)
+                        .criterion(hasItem(Items.BROWN_EGG), conditionsFromItem(Items.BROWN_EGG))
+                        .offerTo(exporter, "smelting_fried_brown_egg");
+
+                CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Items.BROWN_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 100)
+                        .criterion(hasItem(Items.BROWN_EGG), conditionsFromItem(Items.BROWN_EGG))
+                        .offerTo(exporter, "smoking_fried_brown_egg");
+
+                CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.BROWN_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 600)
+                        .criterion(hasItem(Items.BROWN_EGG), conditionsFromItem(Items.BROWN_EGG))
+                        .offerTo(exporter, "campfire_fried_brown_egg");
 
         CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Iteminit.MARSHMALLOW), RecipeCategory.FOOD, Iteminit.COOKED_MARSHMALLOW, 0.35f, 100)
                     .criterion(hasItem(Iteminit.MARSHMALLOW), conditionsFromItem(Iteminit.MARSHMALLOW))

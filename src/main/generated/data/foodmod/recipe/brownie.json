@@ -5,7 +5,11 @@
     "foodmod:chocolate_bar",
     "minecraft:sugar",
     "minecraft:milk_bucket",
-    "minecraft:egg",
+    [
+      "minecraft:egg",
+      "minecraft:blue_egg",
+      "minecraft:brown_egg"
+    ],
     "minecraft:wheat"
   ],
   "result": {

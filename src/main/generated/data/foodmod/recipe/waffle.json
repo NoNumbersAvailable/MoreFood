@@ -5,7 +5,11 @@
     "minecraft:milk_bucket",
     "minecraft:sugar",
     "minecraft:wheat",
-    "minecraft:egg"
+    [
+      "minecraft:egg",
+      "minecraft:blue_egg",
+      "minecraft:brown_egg"
+    ]
   ],
   "result": {
     "count": 2,

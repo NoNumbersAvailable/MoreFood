@@ -20,7 +20,7 @@ public class ModConfiguredFeatures {
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
 
 
-        register(context, BLUE_BERRY_BUSH_KEY, Feature.RANDOM_PATCH,
+       register(context, BLUE_BERRY_BUSH_KEY, Feature.RANDOM_PATCH,
                 ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockInit.BLUE_BERRY_BUSH
                                 .getDefaultState().with(SweetBerryBushBlock.AGE, 3))),

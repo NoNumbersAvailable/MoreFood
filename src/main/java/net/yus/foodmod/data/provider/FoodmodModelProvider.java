@@ -29,8 +29,8 @@ public class FoodmodModelProvider extends FabricModelProvider {
         blockStateModelGenerator.createLogTexturePool(BlockInit.CORN_BALE).log(BlockInit.CORN_BALE);
         blockStateModelGenerator.registerSingleton(BlockInit.FOOD_STAND, TexturedModel.ORIENTABLE_WITH_BOTTOM);
 
-        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(BlockInit.BLUE_BERRY_BUSH, BlockStateModelGenerator.CrossType.NOT_TINTED,
-                BlueBerryBush.AGE, 0, 1, 2, 3);
+       blockStateModelGenerator.registerTintableCrossBlockStateWithStages(BlockInit.BLUE_BERRY_BUSH, BlockStateModelGenerator.CrossType.NOT_TINTED,
+             BlueBerryBush.AGE, 0, 1, 2, 3);
     }
 
     @Override

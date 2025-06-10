@@ -6,7 +6,11 @@
     "B": "minecraft:sugar",
     "C": "minecraft:wheat",
     "D": "minecraft:milk_bucket",
-    "E": "minecraft:egg"
+    "E": [
+      "minecraft:egg",
+      "minecraft:blue_egg",
+      "minecraft:brown_egg"
+    ]
   },
   "pattern": [
     "ADA",

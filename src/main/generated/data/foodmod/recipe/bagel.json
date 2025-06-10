@@ -3,7 +3,11 @@
   "category": "misc",
   "key": {
     "E": "minecraft:wheat",
-    "W": "minecraft:egg"
+    "W": [
+      "minecraft:egg",
+      "minecraft:blue_egg",
+      "minecraft:brown_egg"
+    ]
   },
   "pattern": [
     "EEE",

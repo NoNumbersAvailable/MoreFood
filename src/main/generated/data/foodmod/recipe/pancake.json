@@ -4,7 +4,11 @@
   "ingredients": [
     "minecraft:milk_bucket",
     "minecraft:wheat",
-    "minecraft:egg",
+    [
+      "minecraft:egg",
+      "minecraft:blue_egg",
+      "minecraft:brown_egg"
+    ],
     "foodmod:chocolate_bar"
   ],
   "result": {

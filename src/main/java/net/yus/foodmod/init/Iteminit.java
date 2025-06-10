@@ -1,6 +1,5 @@
 package net.yus.foodmod.init;
 
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -53,7 +52,7 @@ public class Iteminit {
                     .food(FoodList.PUMPKIN_SLICE)));
 
     public static final Item BLUE_BERRIES = registerItem("blue_berries",
-            new BlockItem(BlockInit.BLUE_BERRY_BUSH, new Item.Settings()
+         new BlockItem(BlockInit.BLUE_BERRY_BUSH, new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "blue_berries")))
                     .food(FoodList.BLUE_BERRIES)));
 
@@ -527,102 +526,10 @@ public class Iteminit {
                     return Registry.register(Registries.ITEM, Identifier.of(Foodmod.MOD_ID, name), item);
                 }
 
-    private static void registerCompostableItems() {
-        CompostingChanceRegistry.INSTANCE.add(RICE_SEEDS, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(RICE, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(PUMPKIN_SLICE, 0.50f);
-        CompostingChanceRegistry.INSTANCE.add(BLUE_BERRIES, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BANANA, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(KIWI, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(CHOCOLATE_CAKE, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(BROWNIE, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(CHOCOLATE_BAR, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(SWEET_CANDY, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(SANDWICH_COOKIE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(HONEY_BAR, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(HONEY_CANDY, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(HONEY_COOKIE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(CANDY_CANE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(SLICE_OF_CAKE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(WAFFLE, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(PANCAKE, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(BAGEL, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(SWEET_BERRY_PIE, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(BLUE_BERRY_PIE, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(GLOW_BERRY_PIE, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(APPLE_PIE, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(MELON_PIE, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(WHITE_DONUT, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(CHOCOLATE_DONUT, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(PINK_DONUT, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(BLUE_BERRY_DONUT, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(BANANA_DONUT, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(KIWI_DONUT, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(CHOCOLATE_ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(SANDWICH_COOKIE_ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(SWEET_BERRY_ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(BLUE_BERRY_ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(GLOW_BERRY_ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(APPLE_ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(BANANA_ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(MELON_ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(CHORUS_FRUIT_ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(KIWI_ICE_CREAM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(BUBBLEGUM, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BLUE_BERRY_BUBBLEGUM, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(GLOW_BERRY_BUBBLEGUM, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(APPLE_BUBBLEGUM, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(BANANA_BUBBLEGUM, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MELON_BUBBLEGUM, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(CHORUS_FRUIT_BUBBLEGUM, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(KIWI_BUBBLEGUM, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(FRIED_EGG, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(FRIED_TURTLE_EGG, 1f);
-        CompostingChanceRegistry.INSTANCE.add(FRIED_SNIFFER_EGG, 1f);
-        CompostingChanceRegistry.INSTANCE.add(RICE_CAKE, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(RICE_BALLS, 0.5f);
-        CompostingChanceRegistry.INSTANCE.add(SUSHI, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(FRIES, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(HOTDOG, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(TACO, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(BURGER, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(PIZZA, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_FLESH, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_SPIDER_EYE, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_PUFFERFISH, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_TROPICAL_FISH, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(GOLDEN_POTATO, 1f);
-        CompostingChanceRegistry.INSTANCE.add(CACTUS_LEAF, 0.5f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_CACTUS_LEAF, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_BAMBOO, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_SUGAR_CANE, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_COCOA_BEANS, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_RED_MUSHROOM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_BROWN_MUSHROOM, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_CRIMSON_FUNGUS, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_WARPED_FUNGUS, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_NETHER_WART, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(BlockInit.CHOCOLATE_BLOCK, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(BlockInit.SUGAR_BLOCK, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(BlockInit.SUGAR_CANE_BALE, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(BlockInit.RICE_BLOCK, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(MARSHMALLOW, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(COOKED_MARSHMALLOW, 0.5f);
-        CompostingChanceRegistry.INSTANCE.add(COTTON_CANDY, 0.3f);
-        CompostingChanceRegistry.INSTANCE.add(MEAT_SKEWER, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(BANANA_SPLIT, 0.85f);
-        CompostingChanceRegistry.INSTANCE.add(FRUIT_SALAD, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(RICE_PUDDING, 0.65f);
-        CompostingChanceRegistry.INSTANCE.add(MEAT_STEW, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(FISH_STEW, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(PUMPKIN_SOUP, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(NETHER_WART_SOUP, 1.0f);
-        CompostingChanceRegistry.INSTANCE.add(FUNGUS_STEW, 1.0f);
-    }
+
 
     public static void registerModItems() {
-        registerCompostableItems();
+
     }
 }
 
