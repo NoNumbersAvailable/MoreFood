@@ -88,6 +88,12 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                             .criterion(hasItem(Iteminit.PUMPKIN_SLICE), conditionsFromItem(Iteminit.PUMPKIN_SLICE))
                             .offerTo(exporter);
 
+                createShapeless(RecipeCategory.DECORATIONS, Items.CACTUS, 1)
+                        .input(Iteminit.CACTUS_LEAF)
+                        .input(Iteminit.CACTUS_LEAF)
+                        .input(Iteminit.CACTUS_LEAF)
+                        .criterion(hasItem(Iteminit.CACTUS_LEAF), conditionsFromItem(Iteminit.CACTUS_LEAF))
+                        .offerTo(exporter);
 
                 createShapeless(RecipeCategory.MISC, Iteminit.RICE, 9)
                     .input(BlockInit.RICE_BLOCK)
@@ -188,8 +194,6 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
 
 
                     createShapeless(RecipeCategory.MISC, Iteminit.CACTUS_LEAF, 3)
-                            .input(Items.CACTUS)
-                            .input(Items.CACTUS)
                             .input(Items.CACTUS)
                             .criterion(hasItem(Items.CACTUS), conditionsFromItem(Items.CACTUS))
                             .offerTo(exporter);

@@ -338,7 +338,7 @@ public class FoodList {
                     new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 0, false, false))).consumeSeconds(0.8F).build();
 
     public static final FoodComponent COOKED_CACTUS_LEAF = new FoodComponent.Builder()
-            .nutrition(1).saturationModifier(0.1F).alwaysEdible().build();
+            .nutrition(1).saturationModifier(0.1F).build();
 
     public static final ConsumableComponent COOKED_CACTUS_LEAF_EFFECT = ConsumableComponents.food()
             .consumeSeconds(0.8F).build();

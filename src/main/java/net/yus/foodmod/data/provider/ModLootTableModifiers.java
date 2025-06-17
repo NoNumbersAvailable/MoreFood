@@ -34,10 +34,15 @@ public class ModLootTableModifiers {
 
     private static final Identifier TRAILRUIN_ID
             = Identifier.of("minecraft", "archaeology/trail_ruins_common");
+
     private static final Identifier MANSION_ID
             = Identifier.of("minecraft", "chests/woodland_mansion");
+
     private static final Identifier STRONGHOLD_CROSSING_ID
             = Identifier.of("minecraft", "chests/stronghold_crossing");
+
+    private static final Identifier BURIED_TREASURE_ID
+            = Identifier.of("minecraft", "chests/buried_treasure");
 
     private static final Identifier STRONGHOLD_CORRIDOR_ID
             = Identifier.of("minecraft", "chests/stronghold_corridor");
@@ -104,495 +109,519 @@ public class ModLootTableModifiers {
         if (config.disableLootInjects) {
             return;
         }
-            LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
-                if(source.isBuiltin() && GRASS_BLOCK_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.06f))
-                            .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
+        LootTableEvents.MODIFY.register((key, tableBuilder, source) -> {
+            if(source.isBuiltin() && GRASS_BLOCK_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.06f))
+                        .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
 
-                if(source.isBuiltin() && TALL_GRASS_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.03f))
-                            .with(ItemEntry.builder(Iteminit.CORN))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
+            if(source.isBuiltin() && TALL_GRASS_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.03f))
+                        .with(ItemEntry.builder(Iteminit.CORN))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
 
-                    if(source.isBuiltin() && FERN_BLOCK_ID.equals(key.getValue())) {
-                        LootPool.Builder poolBuilder = LootPool.builder()
-                                .rolls(ConstantLootNumberProvider.create(1))
-                                .conditionally(RandomChanceLootCondition.builder(0.1f))
-                                .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
-                                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                        tableBuilder.pool(poolBuilder.build());
-                    }
+            if(source.isBuiltin() && FERN_BLOCK_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
 
-                if(source.isBuiltin() && JUNGLE_LEAVES_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.005f))
-                            .with(ItemEntry.builder(Iteminit.BANANA))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && MANGROVE_LEAVES_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.005f))
-                            .with(ItemEntry.builder(Iteminit.KIWI))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && TRAILRUIN_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.01f))
-                            .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && MANSION_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && MANSION_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.1f))
-                            .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && STRONGHOLD_CROSSING_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.025f))
-                            .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && STRONGHOLD_CROSSING_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.RICE))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && STRONGHOLD_CORRIDOR_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.RICE))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && UNDERWATER_RUIN_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.04f))
-                            .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && SIMPLE_DUNGEON_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.1f))
-                            .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && SIMPLE_DUNGEON_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && SIMPLE_DUNGEON_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.25f))
-                            .with(ItemEntry.builder(Iteminit.BANANA))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.BANANA))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.RICE))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.CORN))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && RUINED_PORTAL_STRUCTURE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.1f))
-                            .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && RUINED_PORTAL_STRUCTURE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.FUNGUS_STEW))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && RUINED_PORTAL_STRUCTURE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_NETHER_WART))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && PILLAGER_OUTPOST_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && NETHER_BRIDGE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_NETHER_WART))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && JUNGLE_TEMPLE_STRUCTURE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_BAMBOO))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && JUNGLE_TEMPLE_STRUCTURE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.BANANA))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && IGLOO_STRUCTURE_CHEST_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.5f))
-                            .with(ItemEntry.builder(Iteminit.CANDY_CANE))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && IGLOO_STRUCTURE_CHEST_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_CORN))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && IGLOO_STRUCTURE_CHEST_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.6f))
-                            .with(ItemEntry.builder(Iteminit.MARSHMALLOW))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && END_CITY_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.CHORUS_FRUIT_BUBBLEGUM))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && DESERT_PYRAMID_STRUCTURE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.4f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_SUGAR_CANE))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 8.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && DESERT_PYRAMID_STRUCTURE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && DESERT_PYRAMID_STRUCTURE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.5f))
-                            .with(ItemEntry.builder(Iteminit.CACTUS_LEAF))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 5.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && BASTION_OTHER_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_WARPED_FUNGUS))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && BASTION_OTHER_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_CRIMSON_FUNGUS))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && BASTION_OTHER_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_NETHER_WART))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && BASTION_OTHER_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.NETHER_WART_SOUP))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && BASTION_OTHER_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.FUNGUS_STEW))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && BASTION_HOGLIN_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_WARPED_FUNGUS))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && BASTION_HOGLIN_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_CRIMSON_FUNGUS))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && BASTION_HOGLIN_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_NETHER_WART))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && BASTION_HOGLIN_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.NETHER_WART_SOUP))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && BASTION_HOGLIN_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.FUNGUS_STEW))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.5f))
-                            .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.4f))
-                            .with(ItemEntry.builder(Iteminit.BANANA))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.CORN))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.CORNFLAKES))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.CHOCOLATE_BAR))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 6.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.5f))
-                            .with(ItemEntry.builder(Iteminit.MARSHMALLOW))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.SLICE_OF_CAKE))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 7.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
+            if(source.isBuiltin() && JUNGLE_LEAVES_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.005f))
+                        .with(ItemEntry.builder(Iteminit.BANANA))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && MANGROVE_LEAVES_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.005f))
+                        .with(ItemEntry.builder(Iteminit.KIWI))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && TRAILRUIN_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.01f))
+                        .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && MANSION_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && MANSION_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && STRONGHOLD_CROSSING_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.025f))
+                        .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && STRONGHOLD_CROSSING_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.RICE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && STRONGHOLD_CORRIDOR_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.RICE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && UNDERWATER_RUIN_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.04f))
+                        .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && SIMPLE_DUNGEON_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && SIMPLE_DUNGEON_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && SIMPLE_DUNGEON_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.25f))
+                        .with(ItemEntry.builder(Iteminit.BANANA))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.BANANA))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.RICE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.CORN))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && RUINED_PORTAL_STRUCTURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && RUINED_PORTAL_STRUCTURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.FUNGUS_STEW))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && RUINED_PORTAL_STRUCTURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_NETHER_WART))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && PILLAGER_OUTPOST_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && PILLAGER_OUTPOST_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.CORN))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && NETHER_BRIDGE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_NETHER_WART))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && JUNGLE_TEMPLE_STRUCTURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_BAMBOO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && JUNGLE_TEMPLE_STRUCTURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.BANANA))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && IGLOO_STRUCTURE_CHEST_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .with(ItemEntry.builder(Iteminit.CANDY_CANE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && IGLOO_STRUCTURE_CHEST_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_CORN))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && IGLOO_STRUCTURE_CHEST_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.6f))
+                        .with(ItemEntry.builder(Iteminit.MARSHMALLOW))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && END_CITY_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.CHORUS_FRUIT_BUBBLEGUM))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && DESERT_PYRAMID_STRUCTURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.4f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_SUGAR_CANE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 8.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && DESERT_PYRAMID_STRUCTURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && DESERT_PYRAMID_STRUCTURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .with(ItemEntry.builder(Iteminit.CACTUS_LEAF))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 5.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BASTION_OTHER_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_WARPED_FUNGUS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BASTION_OTHER_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_CRIMSON_FUNGUS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BASTION_OTHER_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_NETHER_WART))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BASTION_OTHER_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.NETHER_WART_SOUP))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BASTION_OTHER_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.FUNGUS_STEW))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BASTION_HOGLIN_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_WARPED_FUNGUS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BASTION_HOGLIN_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_CRIMSON_FUNGUS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BASTION_HOGLIN_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_NETHER_WART))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BASTION_HOGLIN_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.NETHER_WART_SOUP))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BASTION_HOGLIN_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.FUNGUS_STEW))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.4f))
+                        .with(ItemEntry.builder(Iteminit.BANANA))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.CORN))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.CORNFLAKES))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.CHOCOLATE_BAR))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .with(ItemEntry.builder(Iteminit.MARSHMALLOW))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.SLICE_OF_CAKE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 7.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
 
-                if(source.isBuiltin() && ABANDONED_STRUCTURE_MINESHAFT_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && ABANDONED_STRUCTURE_MINESHAFT_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.CORN))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && ABANDONED_STRUCTURE_MINESHAFT_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.2f))
-                            .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && ABANDONED_STRUCTURE_MINESHAFT_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 6.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && VILLAGE_STRUCTURE_DESERT_HOUSE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.5f))
-                            .with(ItemEntry.builder(Iteminit.COOKED_SUGAR_CANE))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && VILLAGE_STRUCTURE_DESERT_HOUSE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.7f))
-                            .with(ItemEntry.builder(Iteminit.CACTUS_LEAF))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && VILLAGE_STRUCTURE_SNOWY_HOUSE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.3f))
-                            .with(ItemEntry.builder(Iteminit.CANDY_CANE))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && VILLAGE_STRUCTURE_SNOWY_HOUSE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.4f))
-                            .with(ItemEntry.builder(Iteminit.MARSHMALLOW))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 8.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && VILLAGE_STRUCTURE_PLAINS_HOUSE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.4f))
-                            .with(ItemEntry.builder(Iteminit.CORN))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && VILLAGE_STRUCTURE_SAVANNA_HOUSE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.4f))
-                            .with(ItemEntry.builder(Iteminit.RICE))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
-                if(source.isBuiltin() && VILLAGE_STRUCTURE_TAIGA_HOUSE_ID.equals(key.getValue())) {
-                    LootPool.Builder poolBuilder = LootPool.builder()
-                            .rolls(ConstantLootNumberProvider.create(1))
-                            .conditionally(RandomChanceLootCondition.builder(0.4f))
-                            .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
-                            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
-                    tableBuilder.pool(poolBuilder.build());
-                }
+            if(source.isBuiltin() && ABANDONED_STRUCTURE_MINESHAFT_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.RICE_SEEDS))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ABANDONED_STRUCTURE_MINESHAFT_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.CORN))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ABANDONED_STRUCTURE_MINESHAFT_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ABANDONED_STRUCTURE_MINESHAFT_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(3.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && VILLAGE_STRUCTURE_DESERT_HOUSE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_SUGAR_CANE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && VILLAGE_STRUCTURE_DESERT_HOUSE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.7f))
+                        .with(ItemEntry.builder(Iteminit.CACTUS_LEAF))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && VILLAGE_STRUCTURE_SNOWY_HOUSE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.CANDY_CANE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && VILLAGE_STRUCTURE_SNOWY_HOUSE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.4f))
+                        .with(ItemEntry.builder(Iteminit.MARSHMALLOW))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 8.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && VILLAGE_STRUCTURE_PLAINS_HOUSE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.4f))
+                        .with(ItemEntry.builder(Iteminit.CORN))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && VILLAGE_STRUCTURE_SAVANNA_HOUSE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.4f))
+                        .with(ItemEntry.builder(Iteminit.RICE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && VILLAGE_STRUCTURE_TAIGA_HOUSE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.4f))
+                        .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BURIED_TREASURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.75f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_PUFFERFISH))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BURIED_TREASURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.75f))
+                        .with(ItemEntry.builder(Iteminit.COOKED_TROPICAL_FISH))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
 
 
 
-            });
-        }
+        });
     }
+}
 
