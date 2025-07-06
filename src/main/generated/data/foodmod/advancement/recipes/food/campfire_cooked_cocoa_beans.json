@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:campfire_cooked_cocoa_beans"
+        "recipe": "foodmod:campfire_cooked_cocoa_beans"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:campfire_cooked_cocoa_beans"
+      "foodmod:campfire_cooked_cocoa_beans"
     ]
   }
 }

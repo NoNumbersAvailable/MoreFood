@@ -236,6 +236,34 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Iteminit.BLUE_BERRIES), conditionsFromItem(Iteminit.BLUE_BERRIES))
                     .offerTo(exporter);
 
+                createShapeless(RecipeCategory.MISC, Iteminit.CHORUS_FRUIT_DONUT, 1)
+                        .input(Items.CHORUS_FRUIT)
+                        .input(Items.SUGAR)
+                        .input(Items.WHEAT)
+                        .criterion(hasItem(Items.CHORUS_FRUIT), conditionsFromItem(Items.CHORUS_FRUIT))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Iteminit.APPLE_DONUT, 1)
+                        .input(Items.APPLE)
+                        .input(Items.SUGAR)
+                        .input(Items.WHEAT)
+                        .criterion(hasItem(Items.APPLE), conditionsFromItem(Items.APPLE))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Iteminit.MELON_DONUT, 1)
+                        .input(Items.MELON_SLICE)
+                        .input(Items.SUGAR)
+                        .input(Items.WHEAT)
+                        .criterion(hasItem(Items.MELON_SLICE), conditionsFromItem(Items.MELON_SLICE))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Iteminit.GLOW_BERRY_DONUT, 1)
+                        .input(Items.GLOW_BERRIES)
+                        .input(Items.SUGAR)
+                        .input(Items.WHEAT)
+                        .criterion(hasItem(Items.GLOW_BERRIES), conditionsFromItem(Items.GLOW_BERRIES))
+                        .offerTo(exporter);
+
                 createShapeless(RecipeCategory.MISC, Iteminit.BLUE_BERRY_ICE_CREAM, 4)
                     .input(Iteminit.BLUE_BERRIES)
                         .input(Items.SNOWBALL)
@@ -456,7 +484,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
 
                 createShapeless(RecipeCategory.MISC, Iteminit.MARSHMALLOW, 4)
                     .input(Items.SUGAR)
-                .input(Items.BONE)
+                .input(Items.STICK)
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                     .offerTo(exporter);
 

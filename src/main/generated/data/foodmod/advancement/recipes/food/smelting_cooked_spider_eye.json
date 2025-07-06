@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smelting_cooked_spider_eye"
+        "recipe": "foodmod:smelting_cooked_spider_eye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smelting_cooked_spider_eye"
+      "foodmod:smelting_cooked_spider_eye"
     ]
   }
 }

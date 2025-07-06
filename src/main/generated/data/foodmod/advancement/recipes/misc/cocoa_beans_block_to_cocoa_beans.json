@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cocoa_beans_block_to_cocoa_beans"
+        "recipe": "foodmod:cocoa_beans_block_to_cocoa_beans"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cocoa_beans_block_to_cocoa_beans"
+      "foodmod:cocoa_beans_block_to_cocoa_beans"
     ]
   }
 }

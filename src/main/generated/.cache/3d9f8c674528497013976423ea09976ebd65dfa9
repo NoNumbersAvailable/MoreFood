@@ -1,5 +1,6 @@
-// 1.21.5	-999999999-01-01T00:00:00	MoreFood/Block Loot Tables
+// 1.21.7	-999999999-01-01T00:00:00	MoreFood/Block Loot Tables
 004f42a6212aa01775678a4e6033b5e7903ce423 data/foodmod/loot_table/blocks/chocolate_block.json
+78a4b5ddecb39fc9cd15cf94fbd7b81dea1775b9 data/foodmod/loot_table/blocks/cocoa_beans_block.json
 4354f2401eb56e76c03534406f6dd739702febe7 data/foodmod/loot_table/blocks/corn_bale.json
 6d050d4c6f66a0a0abfc9a60ef022507f4d1f46f data/foodmod/loot_table/blocks/food_stand.json
 3deaf2fcb28247165e0d1aa5485cf026a89b1141 data/foodmod/loot_table/blocks/rice_block.json

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smoking_cooked_cocoa_beans"
+        "recipe": "foodmod:smoking_cooked_cocoa_beans"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smoking_cooked_cocoa_beans"
+      "foodmod:smoking_cooked_cocoa_beans"
     ]
   }
 }

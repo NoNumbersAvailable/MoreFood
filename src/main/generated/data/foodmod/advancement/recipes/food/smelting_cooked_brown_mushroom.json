@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smelting_cooked_brown_mushroom"
+        "recipe": "foodmod:smelting_cooked_brown_mushroom"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smelting_cooked_brown_mushroom"
+      "foodmod:smelting_cooked_brown_mushroom"
     ]
   }
 }

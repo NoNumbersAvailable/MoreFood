@@ -58,7 +58,11 @@ public class ItemGroupInit {
                 entries.add(Iteminit.CHOCOLATE_DONUT);
                 entries.add(Iteminit.PINK_DONUT);
                 entries.add(Iteminit.BLUE_BERRY_DONUT);
+                entries.add(Iteminit.GLOW_BERRY_DONUT);
+                entries.add(Iteminit.APPLE_DONUT);
                 entries.add(Iteminit.BANANA_DONUT);
+                entries.add(Iteminit.MELON_DONUT);
+                entries.add(Iteminit.CHORUS_FRUIT_DONUT);
                 entries.add(Iteminit.KIWI_DONUT);
                 entries.add(Iteminit.ICE_CREAM);
                 entries.add(Iteminit.CHOCOLATE_ICE_CREAM);

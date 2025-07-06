@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:campfire_fried_turtle_egg"
+        "recipe": "foodmod:campfire_fried_turtle_egg"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:campfire_fried_turtle_egg"
+      "foodmod:campfire_fried_turtle_egg"
     ]
   }
 }

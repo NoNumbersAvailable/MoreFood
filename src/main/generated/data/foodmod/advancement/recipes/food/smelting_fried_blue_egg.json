@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smelting_fried_blue_egg"
+        "recipe": "foodmod:smelting_fried_blue_egg"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smelting_fried_blue_egg"
+      "foodmod:smelting_fried_blue_egg"
     ]
   }
 }

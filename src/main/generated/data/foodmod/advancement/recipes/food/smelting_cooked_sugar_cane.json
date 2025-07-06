@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smelting_cooked_sugar_cane"
+        "recipe": "foodmod:smelting_cooked_sugar_cane"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smelting_cooked_sugar_cane"
+      "foodmod:smelting_cooked_sugar_cane"
     ]
   }
 }

@@ -259,6 +259,10 @@ public class Foodmod implements ModInitializer {
         CompostingChanceRegistry.INSTANCE.add(Iteminit.PANCAKE, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.BAGEL, 1f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.WHITE_DONUT, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.CHORUS_FRUIT_DONUT, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.APPLE_DONUT, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.MELON_DONUT, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.GLOW_BERRY_DONUT, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.CHOCOLATE_DONUT, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.PINK_DONUT, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.BLUE_BERRY_DONUT, 0.85f);

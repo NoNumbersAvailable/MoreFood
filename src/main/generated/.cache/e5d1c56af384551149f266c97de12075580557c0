@@ -1,4 +1,4 @@
-// 1.21.5	-999999999-01-01T00:00:00	MoreFood/Model Definitions
+// 1.21.7	-999999999-01-01T00:00:00	MoreFood/Model Definitions
 ba264794e4f8964a50ebc3379e25457799f0c8fe assets/foodmod/blockstates/blue_berry_bush.json
 b93ee995c289e0bd3d18d76cc66577747ebd934f assets/foodmod/blockstates/chocolate_block.json
 dec4f8c187642777bf64289c01ed9d02b5a423d7 assets/foodmod/blockstates/cocoa_beans_block.json
@@ -8,6 +8,7 @@ a4386bf82cf5b6c0663f5686ebfa871af81e6e80 assets/foodmod/blockstates/rice_block.j
 5af83c8609ad61e9985d098528d9ae73627d1f2a assets/foodmod/blockstates/sugar_block.json
 cab09eb00aef73d52d6cd8be958608839de450f7 assets/foodmod/blockstates/sugar_cane_bale.json
 913ae07cb998fa1872110c7009e027757c8c05cc assets/foodmod/items/apple_bubblegum.json
+d85fca453eeab6c3d9be024572419c05f8dc21a3 assets/foodmod/items/apple_donut.json
 064395364afd897097bbe506547a2db5044a31ca assets/foodmod/items/apple_ice_cream.json
 ba9cdb1c7b4f390c14aff6bfbfc2917fd78ac968 assets/foodmod/items/apple_pie.json
 58adedf554f17720bf50abb9a558120c753130ff assets/foodmod/items/bagel.json
@@ -33,6 +34,7 @@ c0183126a905d6b64cc7792c3ba0f1677d16cb77 assets/foodmod/items/chocolate_block.js
 9f437f11ef2a0ab1b207ed841e3749dd95344b00 assets/foodmod/items/chocolate_donut.json
 5017184904ee9f664c60f33d54383e8758b573dc assets/foodmod/items/chocolate_ice_cream.json
 52668e99148e151b507e0382a203b52f06006a8c assets/foodmod/items/chorus_fruit_bubblegum.json
+977faf90063821ae038ee69ed3d09b187e2353a6 assets/foodmod/items/chorus_fruit_donut.json
 920ddb345edf1995e2e490f6e1527b88b6fb05ad assets/foodmod/items/chorus_fruit_ice_cream.json
 a8532e5280cd6313de83f32406561489e152d5d1 assets/foodmod/items/cocoa_beans_block.json
 c78f20b2bb91b7f8bd7bb6a89604f4378c77ee24 assets/foodmod/items/cooked_bamboo.json
@@ -65,6 +67,7 @@ aab40b1a0f98f604024f36e8515fa5081f8a878f assets/foodmod/items/fried_sniffer_egg.
 bba2c859f967f99904c363cc35ea005dbb77951c assets/foodmod/items/fruit_salad.json
 55558daa7abd8b650906c5ee5134f6cdafa5c37c assets/foodmod/items/fungus_stew.json
 3e16af3fcb881a9cc030f2dfc63ec292222a3dca assets/foodmod/items/glow_berry_bubblegum.json
+1ce2f7dd788b6a3bc16b7cd862ca1a6bd04c8293 assets/foodmod/items/glow_berry_donut.json
 508baef8c4c4c95d155c10985f1a445483004561 assets/foodmod/items/glow_berry_ice_cream.json
 668786f8837c8e6a4178b30a3ec10aa5003d29e5 assets/foodmod/items/glow_berry_pie.json
 e6e80fc36c80c093134c93d65343a67ac1acdc03 assets/foodmod/items/golden_potato.json
@@ -81,6 +84,7 @@ de441c97b51963a0934b56128fad0db9febb7214 assets/foodmod/items/marshmallow.json
 0ceb321ca8faa9e54dbc375c6ebc100bda718173 assets/foodmod/items/meat_skewer.json
 c5797b7477343bc5048ce0d44aab7ee55ec87cca assets/foodmod/items/meat_stew.json
 830719c989bc3329edf164d9e4c6e81a397bc427 assets/foodmod/items/melon_bubblegum.json
+06af03899e069fc2eee9906dd2b41e4ad5ac6126 assets/foodmod/items/melon_donut.json
 13361fad2cb82d8133c47e03f0549777d72c1c35 assets/foodmod/items/melon_ice_cream.json
 09d5fcf86e58ecec02786eab9f05d8c5f46f2cf6 assets/foodmod/items/melon_pie.json
 d0788dae51817f4dfed264dae006a0d50e76b3f0 assets/foodmod/items/nether_wart_soup.json
@@ -122,6 +126,7 @@ e5d02a8b8c97ac59ac7d83f9109645b671c6025a assets/foodmod/models/block/food_stand.
 ebd65bc40c4e93c5b7e0def7f6d593685919f8fe assets/foodmod/models/block/sugar_cane_bale.json
 fd4eb9c39aa03ed5317f86bf04046829ed7d9311 assets/foodmod/models/block/sugar_cane_bale_horizontal.json
 5d2ad89aecce27fc3972cc23ba409caccf0553a5 assets/foodmod/models/item/apple_bubblegum.json
+d30f4638382f9bab89f649e2a1ebed8a8dac0207 assets/foodmod/models/item/apple_donut.json
 2bb749302b4a798b509c2465234cd5016f237ad2 assets/foodmod/models/item/apple_ice_cream.json
 0d5e3b77743e7c2b8accce031bd7efc0128ac41b assets/foodmod/models/item/apple_pie.json
 1fabc6b3d2edaeddebc51b9316583d3e8c85ed68 assets/foodmod/models/item/bagel.json
@@ -145,6 +150,7 @@ a0249bb6f93afd4258037ebbdaff7f0964dafcbd assets/foodmod/models/item/chocolate_ca
 c7a96650b0b784e3d97c3ae2979ac67dea9445bc assets/foodmod/models/item/chocolate_donut.json
 dc5936fb738c859c56642269ec4611aee15606af assets/foodmod/models/item/chocolate_ice_cream.json
 27dbc90c8d3ff2afc579f95dfadcb0477e6af6e9 assets/foodmod/models/item/chorus_fruit_bubblegum.json
+fc4c89878e7e3b417b3904f4e71965c282582cc3 assets/foodmod/models/item/chorus_fruit_donut.json
 8e137fdcc20c33306eed617df4acfbd6b7f5534b assets/foodmod/models/item/chorus_fruit_ice_cream.json
 8bac5781247fca694501f3b35a8f7024d38f642e assets/foodmod/models/item/cooked_bamboo.json
 5c0b65ac37c274d9b687e28fc5dd2c58f1dfe676 assets/foodmod/models/item/cooked_beetroot.json
@@ -174,6 +180,7 @@ abe5c90b6f6d1edae8c6c8692a08b62eb1f69d0e assets/foodmod/models/item/fries.json
 3eb3e7c8e9d093f4efdc02d20c6497a853f03dc1 assets/foodmod/models/item/fruit_salad.json
 4a99820efec683d9ef1e1d7ab53718e3a5ab088a assets/foodmod/models/item/fungus_stew.json
 c3519ed9265af404f545d589b58bbfabea46d515 assets/foodmod/models/item/glow_berry_bubblegum.json
+8b0b49f50a985c9b13717e8823be0ce1e4bd5193 assets/foodmod/models/item/glow_berry_donut.json
 021863b58a0eeeb3119a2155a84278aa2d158560 assets/foodmod/models/item/glow_berry_ice_cream.json
 a2f5368ed152901119a4ed7473731cb17e20c7d2 assets/foodmod/models/item/glow_berry_pie.json
 fa4fee761ef673328f39da556d51a11111d01e31 assets/foodmod/models/item/golden_potato.json
@@ -190,6 +197,7 @@ ff124f7ec79a57c3781d00145b86029e1176d60c assets/foodmod/models/item/kiwi_ice_cre
 33e5ccc36909d5f9496f485c635775ed6df48a2d assets/foodmod/models/item/meat_skewer.json
 291f180cb0f39c5f9bc4493090d09743a728df8e assets/foodmod/models/item/meat_stew.json
 d164abf274f63fe4c0597f705321e74f889aa930 assets/foodmod/models/item/melon_bubblegum.json
+b8d35fbf398136f685e8f807d079cc2273921889 assets/foodmod/models/item/melon_donut.json
 3cc65d7385b5a5f4bc813dd5ad22f8edbac59c66 assets/foodmod/models/item/melon_ice_cream.json
 439ac38de097a827445eaf91b3eaac58dd467b1f assets/foodmod/models/item/melon_pie.json
 eccd2fc776d942e9951a05c1298f44d59ea84102 assets/foodmod/models/item/nether_wart_soup.json

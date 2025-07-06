@@ -97,6 +97,10 @@
   "item.foodmod.corn_dog": "Corn-Dog",
   "item.foodmod.popcorn": "Popcorn",
   "item.foodmod.cooked_beetroot": "Gebratene Rote Bete",
+  "item.foodmod.chorus_fruit_donut": "Chorusfrucht-Donut",
+  "item.foodmod.apple_donut": "Apfel-Donut",
+  "item.foodmod.melon_donut": "Melonen-Donut",
+  "item.foodmod.glow_berry_donut": "Leuchtbeeren-Donut",
 
   "block.foodmod.rice_crop_block": "Reis Pflanze",
   "block.foodmod.chocolate_block": "Schokoladenblock",

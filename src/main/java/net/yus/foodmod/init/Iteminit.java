@@ -15,11 +15,30 @@ import static net.minecraft.item.Items.STICK;
 public class Iteminit {
 
 
+    public static final Item CHORUS_FRUIT_DONUT = registerItem("chorus_fruit_donut",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "chorus_fruit_donut")))
+                    .food(FoodList.CHORUS_FRUIT_DONUT, FoodList.CHORUS_FRUIT_DONUT_EFFECT)));
+
+    public static final Item APPLE_DONUT = registerItem("apple_donut",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "apple_donut")))
+                    .food(FoodList.APPLE_DONUT, FoodList.APPLE_DONUT_EFFECT)));
+
+    public static final Item MELON_DONUT = registerItem("melon_donut",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "melon_donut")))
+                    .food(FoodList.MELON_DONUT, FoodList.MELON_DONUT_EFFECT)));
+
+    public static final Item GLOW_BERRY_DONUT = registerItem("glow_berry_donut",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "glow_berry_donut")))
+                    .food(FoodList.GLOW_BERRY_DONUT, FoodList.GLOW_BERRY_DONUT_EFFECT)));
+
+
     public static final Item RICE_SEEDS = registerItem("rice_seeds",
             new BlockItem(BlockInit.RICE_CROP_BLOCK, new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "rice_seeds")))));
-
-
 
     public static final Item FRIES = registerItem("fries",
             new Item(new Item.Settings()

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smoking_cooked_pufferfish"
+        "recipe": "foodmod:smoking_cooked_pufferfish"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smoking_cooked_pufferfish"
+      "foodmod:smoking_cooked_pufferfish"
     ]
   }
 }

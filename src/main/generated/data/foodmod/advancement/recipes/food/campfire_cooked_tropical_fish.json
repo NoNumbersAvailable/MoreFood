@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:campfire_cooked_tropical_fish"
+        "recipe": "foodmod:campfire_cooked_tropical_fish"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:campfire_cooked_tropical_fish"
+      "foodmod:campfire_cooked_tropical_fish"
     ]
   }
 }

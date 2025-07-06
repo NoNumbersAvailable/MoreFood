@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smelting_cooked_crimson_fungus"
+        "recipe": "foodmod:smelting_cooked_crimson_fungus"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smelting_cooked_crimson_fungus"
+      "foodmod:smelting_cooked_crimson_fungus"
     ]
   }
 }

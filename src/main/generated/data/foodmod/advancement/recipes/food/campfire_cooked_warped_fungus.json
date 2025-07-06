@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:campfire_cooked_warped_fungus"
+        "recipe": "foodmod:campfire_cooked_warped_fungus"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:campfire_cooked_warped_fungus"
+      "foodmod:campfire_cooked_warped_fungus"
     ]
   }
 }
