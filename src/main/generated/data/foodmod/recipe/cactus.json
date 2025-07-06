@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:cactus_leaf",
+    "foodmod:cactus_leaf",
+    "foodmod:cactus_leaf"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:cactus"
+  }
+}
