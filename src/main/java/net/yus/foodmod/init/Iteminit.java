@@ -14,6 +14,20 @@ import static net.minecraft.item.Items.STICK;
 
 public class Iteminit {
 
+    public static final Item KIWI_PIE = registerItem("kiwi_pie",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "kiwi_pie")))
+                    .food(FoodList.KIWI_PIE, FoodList.KIWI_PIE_EFFECT)));
+
+    public static final Item CHORUS_FRUIT_PIE = registerItem("chorus_fruit_pie",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "chorus_fruit_pie")))
+                    .food(FoodList.CHORUS_FRUIT_PIE, FoodList.CHORUS_FRUIT_PIE_EFFECT)));
+
+    public static final Item BANANA_PIE = registerItem("banana_pie",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "banana_pie")))
+                    .food(FoodList.BANANA_PIE, FoodList.BANANA_PIE_EFFECT)));
 
     public static final Item CHORUS_FRUIT_DONUT = registerItem("chorus_fruit_donut",
             new Item(new Item.Settings()

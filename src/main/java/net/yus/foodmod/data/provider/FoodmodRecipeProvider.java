@@ -280,6 +280,27 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Iteminit.BLUE_BERRIES), conditionsFromItem(Iteminit.BLUE_BERRIES))
                     .offerTo(exporter);
 
+                createShapeless(RecipeCategory.MISC, Iteminit.BANANA_PIE, 1)
+                        .input(Iteminit.BANANA)
+                        .input(Items.SUGAR)
+                        .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
+                        .criterion(hasItem(Iteminit.BANANA), conditionsFromItem(Iteminit.BANANA))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Iteminit.KIWI_PIE, 1)
+                        .input(Iteminit.KIWI)
+                        .input(Items.SUGAR)
+                        .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
+                        .criterion(hasItem(Iteminit.KIWI), conditionsFromItem(Iteminit.KIWI))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Iteminit.CHORUS_FRUIT_PIE, 1)
+                        .input(Items.CHORUS_FRUIT)
+                        .input(Items.SUGAR)
+                        .input(Ingredient.ofItems(Items.EGG,Items.BLUE_EGG,Items.BROWN_EGG))
+                        .criterion(hasItem(Items.CHORUS_FRUIT), conditionsFromItem(Items.CHORUS_FRUIT))
+                        .offerTo(exporter);
+
                 createShapeless(RecipeCategory.MISC, Iteminit.BROWNIE, 2)
                     .input(Iteminit.CHOCOLATE_BAR)
                 .input(Items.SUGAR)

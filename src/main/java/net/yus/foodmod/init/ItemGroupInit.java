@@ -52,7 +52,10 @@ public class ItemGroupInit {
                 entries.add(Iteminit.BLUE_BERRY_PIE);
                 entries.add(Iteminit.GLOW_BERRY_PIE);
                 entries.add(Iteminit.APPLE_PIE);
+                entries.add(Iteminit.BANANA_PIE);
                 entries.add(Iteminit.MELON_PIE);
+                entries.add(Iteminit.CHORUS_FRUIT_PIE);
+                entries.add(Iteminit.KIWI_PIE);
 
                 entries.add(Iteminit.WHITE_DONUT);
                 entries.add(Iteminit.CHOCOLATE_DONUT);

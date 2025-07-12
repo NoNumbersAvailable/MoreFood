@@ -279,6 +279,24 @@ public class FoodList {
     public static final ConsumableComponent APPLE_PIE_EFFECT = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 400, 0)), 0.9f)).build();
 
+    public static final FoodComponent KIWI_PIE = new FoodComponent.Builder()
+            .nutrition(7).saturationModifier(0.3f).alwaysEdible().build();
+
+    public static final ConsumableComponent KIWI_PIE_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 400, 0)), 0.9f)).build();
+
+    public static final FoodComponent CHORUS_FRUIT_PIE = new FoodComponent.Builder()
+            .nutrition(7).saturationModifier(0.3f).alwaysEdible().build();
+
+    public static final ConsumableComponent CHORUS_FRUIT_PIE_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 400, 0)), 0.9f)).build();
+
+    public static final FoodComponent BANANA_PIE = new FoodComponent.Builder()
+            .nutrition(7).saturationModifier(0.3f).alwaysEdible().build();
+
+    public static final ConsumableComponent BANANA_PIE_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.SPEED, 400, 0)), 0.9f)).build();
+
     public static final FoodComponent SUSHI = new FoodComponent.Builder()
             .nutrition(5).saturationModifier(0.6f).alwaysEdible().build();
 

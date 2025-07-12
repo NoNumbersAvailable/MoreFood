@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:banana",
+    "minecraft:sugar",
+    [
+      "minecraft:egg",
+      "minecraft:blue_egg",
+      "minecraft:brown_egg"
+    ]
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:banana_pie"
+  }
+}

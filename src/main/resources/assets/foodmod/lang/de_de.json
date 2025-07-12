@@ -101,6 +101,9 @@
   "item.foodmod.apple_donut": "Apfel-Donut",
   "item.foodmod.melon_donut": "Melonen-Donut",
   "item.foodmod.glow_berry_donut": "Leuchtbeeren-Donut",
+  "item.foodmod.banana_pie": "Bananenkuchen",
+  "item.foodmod.kiwi_pie": "Kiwikuchen",
+  "item.foodmod.chorus_fruit_pie": "Chorusfruchtkuchen",
 
   "block.foodmod.rice_crop_block": "Reis Pflanze",
   "block.foodmod.chocolate_block": "Schokoladenblock",
