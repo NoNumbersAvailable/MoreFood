@@ -22,9 +22,13 @@ import net.yus.foodmod.init.CustomBlocks.RiceCropBlock;
 
 
 
-        public static final Block BLUE_BERRY_BUSH = registerBlock("blue_berry_bush",
-                new BlueBerryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "blue_berry_bush")))
-                       .sounds(BlockSoundGroup.SWEET_BERRY_BUSH)));
+        public static final Block BLUE_BERRY_BUSH = Registry.register(
+                Registries.BLOCK,
+                Identifier.of(Foodmod.MOD_ID, "blue_berry_bush"),
+                new BlueBerryBush(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)
+                        .registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "blue_berry_bush")))
+                        .sounds(BlockSoundGroup.SWEET_BERRY_BUSH))
+        );
 
         public static final Block RICE_CROP_BLOCK = Registry.register(Registries.BLOCK, Identifier.of(Foodmod.MOD_ID, "rice_crop_block"),
                 new RiceCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "rice_crop_block")))

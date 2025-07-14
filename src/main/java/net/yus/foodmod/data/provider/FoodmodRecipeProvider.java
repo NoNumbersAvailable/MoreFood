@@ -389,8 +389,8 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .offerTo(exporter);
 
                 createShapeless(RecipeCategory.MISC, Iteminit.COTTON_CANDY, 1)
-                    .input(Items.STICK)
                 .input(Items.SUGAR)
+                .input(Items.STICK)
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                     .offerTo(exporter);
 

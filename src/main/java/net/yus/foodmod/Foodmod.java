@@ -16,6 +16,7 @@ import net.yus.foodmod.init.BlockInit;
 import net.yus.foodmod.init.ItemGroupInit;
 import net.yus.foodmod.init.Iteminit;
 import net.yus.foodmod.villager.ModVillagers;
+import net.yus.foodmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,7 +39,7 @@ public class Foodmod implements ModInitializer {
         BlockInit.registerModBlocks();
         ModLootTableModifiers.modifyLootTables();
         ModVillagers.registerVillagers();
-
+        ModWorldGeneration.generateModWorldGen();
 
 
         TradeOfferHelper.registerVillagerOffers(ModVillagers.FOOD_MASTER_KEY, 1, factories -> {
