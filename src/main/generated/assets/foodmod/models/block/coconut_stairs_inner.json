@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "foodmod:block/coconut_planks",
+    "side": "foodmod:block/coconut_planks",
+    "top": "foodmod:block/coconut_planks"
+  }
+}

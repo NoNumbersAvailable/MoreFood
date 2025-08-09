@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.recipe.CookingRecipeJsonBuilder;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.registry.tag.ItemTags;
 import net.yus.foodmod.init.BlockInit;
@@ -14,7 +15,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
-
+import net.yus.foodmod.util.ModTags;
 import java.util.concurrent.CompletableFuture;
 
 public class FoodmodRecipeProvider extends FabricRecipeProvider {
@@ -25,7 +26,10 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
     protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup wrapperLookup, RecipeExporter recipeExporter) {
         return new RecipeGenerator(wrapperLookup, recipeExporter) {
             @Override
+
+
             public void generate() {
+
                     createShaped(RecipeCategory.DECORATIONS, BlockInit.CHOCOLATE_BLOCK)
                     .input('E', Iteminit.CHOCOLATE_BAR)
                 .pattern("EEE")
@@ -149,6 +153,21 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                         .input(Items.SUGAR)
                         .input(Items.PAPER)
                         .criterion(hasItem(Iteminit.CORN), conditionsFromItem(Iteminit.CORN))
+                        .offerTo(exporter);
+
+
+                createShapeless(RecipeCategory.MISC, Iteminit.COCONUT_BALL, 3)
+                        .input(Iteminit.COCONUT)
+                        .input(Items.MILK_BUCKET)
+                        .input(Items.SUGAR)
+                        .criterion(hasItem(Iteminit.COCONUT), conditionsFromItem(Iteminit.COCONUT))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Iteminit.COCONUT_DRINK, 1)
+                        .input(Ingredient.ofItems(Iteminit.MANGO,Iteminit.KIWI,Iteminit.BANANA))
+                        .input(Items.SUGAR)
+                        .input(Iteminit.COCONUT)
+                        .criterion(hasItem(Iteminit.COCONUT), conditionsFromItem(Iteminit.COCONUT))
                         .offerTo(exporter);
 
                 createShapeless(RecipeCategory.MISC, Iteminit.APPLE_ICE_CREAM, 4)
@@ -410,15 +429,18 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
 
                 createShapeless(RecipeCategory.MISC, Iteminit.FRUIT_SALAD, 1)
                     .input(Items.APPLE)
-                .input(Items.MELON_SLICE)
-                .input(Items.SWEET_BERRIES)
-                .input(Items.GLOW_BERRIES)
                 .input(Iteminit.BANANA)
-                .input(Iteminit.KIWI)
+                        .input(Items.MELON_SLICE)
+                .input(Items.SWEET_BERRIES)
                 .input(Iteminit.BLUE_BERRIES)
+                .input(Items.GLOW_BERRIES)
+                .input(Iteminit.KIWI)
+                .input(Iteminit.MANGO)
                 .input(Items.BOWL)
                 .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
                     .offerTo(exporter);
+
+
 
                 createShapeless(RecipeCategory.MISC, Iteminit.FUNGUS_STEW, 1)
                     .input(Items.CRIMSON_FUNGUS)
@@ -427,12 +449,11 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
                     .offerTo(exporter);
 
-                createShapeless(RecipeCategory.MISC, Iteminit.RICE_PUDDING, 1)
+                createShapeless(RecipeCategory.MISC, Iteminit.COCONUT_RICE, 1)
                     .input(Iteminit.RICE)
                 .input(Iteminit.RICE)
                 .input(Iteminit.RICE)
-                .input(Items.MILK_BUCKET)
-                .input(Items.COCOA_BEANS)
+                .input(Iteminit.COCONUT)
                 .input(Items.SUGAR)
                 .input(Items.BOWL)
                 .criterion(hasItem(Items.BOWL), conditionsFromItem(Items.BOWL))
@@ -534,6 +555,14 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                         .input(Ingredient.ofItems(Items.COOKED_COD, Items.COOKED_SALMON,Iteminit.COOKED_PUFFERFISH,Iteminit.COOKED_TROPICAL_FISH,Items.COOKED_BEEF, Items.COOKED_CHICKEN,Items.COOKED_MUTTON,Iteminit.COOKED_FLESH,Iteminit.COOKED_SPIDER_EYE,Items.COOKED_PORKCHOP,Items.COOKED_RABBIT))
                         .input(Items.STICK)
                         .criterion(hasItem(Iteminit.CORN), conditionsFromItem(Iteminit.CORN))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Iteminit.FRUIT_SKEWER, 1)
+                        .input(Ingredient.ofItems(Items.SWEET_BERRIES, Iteminit.BLUE_BERRIES, Items.GLOW_BERRIES))
+                        .input(Ingredient.ofItems(Items.APPLE, Iteminit.BANANA, Items.MELON))
+                        .input(Ingredient.ofItems(Iteminit.KIWI, Iteminit.MANGO, Items.CHORUS_FRUIT))
+                        .input(Items.STICK)
+                        .criterion(hasItem(Items.APPLE), conditionsFromItem(Items.APPLE))
                         .offerTo(exporter);
 
                 createShapeless(RecipeCategory.MISC, Iteminit.MELON_BUBBLEGUM, 1)
@@ -719,6 +748,29 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Iteminit.KIWI), conditionsFromItem(Iteminit.KIWI))
                     .offerTo(exporter);
 
+                createShapeless(RecipeCategory.MISC, Iteminit.MANGO_ICE_CREAM, 4)
+                        .input(Iteminit.MANGO)
+                        .input(Items.SNOWBALL)
+                        .input(Items.MILK_BUCKET)
+                        .input(Items.SUGAR)
+                        .input(Items.WHEAT)
+                        .criterion(hasItem(Iteminit.MANGO), conditionsFromItem(Iteminit.MANGO))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Iteminit.MANGO_DONUT)
+                        .input(Iteminit.MANGO)
+                        .input(Items.SUGAR)
+                        .input(Items.WHEAT)
+                        .criterion(hasItem(Iteminit.MANGO), conditionsFromItem(Iteminit.MANGO))
+                        .offerTo(exporter);
+
+                createShapeless(RecipeCategory.MISC, Iteminit.MANGO_BUBBLEGUM)
+                        .input(Iteminit.MANGO)
+                        .input(Items.SUGAR)
+                        .criterion(hasItem(Iteminit.MANGO), conditionsFromItem(Iteminit.MANGO))
+                        .offerTo(exporter);
+
+
                 createShapeless(RecipeCategory.MISC, Iteminit.FRIES, 4)
                     .input(Items.BAKED_POTATO)
                 .input(Items.PAPER)
@@ -731,7 +783,7 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                            .criterion(hasItem(Items.PUMPKIN), conditionsFromItem(Items.PUMPKIN))
                            .offerTo(exporter);
 
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.COCOA_BEANS), RecipeCategory.FOOD, Iteminit.COOKED_COCOA_BEANS, 0.35f, 170)
+                CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.COCOA_BEANS), RecipeCategory.FOOD, Iteminit.COOKED_COCOA_BEANS, 0.35f, 170)
                     .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
                     .offerTo(exporter, "smelting_cooked_cocoa_beans");
 
@@ -817,8 +869,6 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.WARPED_FUNGUS), conditionsFromItem(Items.WARPED_FUNGUS))
                     .offerTo(exporter, "campfire_cooked_warped_fungus");
 
-
-
         CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.CRIMSON_FUNGUS), RecipeCategory.FOOD, Iteminit.COOKED_CRIMSON_FUNGUS, 0.35f, 200)
                     .criterion(hasItem(Items.CRIMSON_FUNGUS), conditionsFromItem(Items.CRIMSON_FUNGUS))
                     .offerTo(exporter, "smelting_cooked_crimson_fungus");
@@ -831,15 +881,11 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.CRIMSON_FUNGUS), conditionsFromItem(Items.CRIMSON_FUNGUS))
                     .offerTo(exporter, "campfire_cooked_crimson_fungus");
 
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.ROTTEN_FLESH), RecipeCategory.FOOD, Iteminit.COOKED_FLESH, 0.35f, 200)
-                    .criterion(hasItem(Items.ROTTEN_FLESH), conditionsFromItem(Items.ROTTEN_FLESH))
-                    .offerTo(exporter, "smelting_cooked_flesh");
-
-        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Items.ROTTEN_FLESH), RecipeCategory.FOOD, Iteminit.COOKED_FLESH, 0.35f, 100)
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Items.ROTTEN_FLESH), RecipeCategory.FOOD, Iteminit.COOKED_FLESH, 0.35f, 200)
                     .criterion(hasItem(Items.ROTTEN_FLESH), conditionsFromItem(Items.ROTTEN_FLESH))
                     .offerTo(exporter, "smoking_cooked_flesh");
 
-        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.ROTTEN_FLESH), RecipeCategory.FOOD, Iteminit.COOKED_FLESH, 0.35f, 600)
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.ROTTEN_FLESH), RecipeCategory.FOOD, Iteminit.COOKED_FLESH, 0.35f, 800)
                     .criterion(hasItem(Items.ROTTEN_FLESH), conditionsFromItem(Items.ROTTEN_FLESH))
                     .offerTo(exporter, "campfire_cooked_flesh");
 
@@ -915,9 +961,6 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.PUFFERFISH), conditionsFromItem(Items.PUFFERFISH))
                     .offerTo(exporter, "campfire_cooked_pufferfish");
 
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 200)
-                    .criterion(hasItem(Items.EGG), conditionsFromItem(Items.EGG))
-                    .offerTo(exporter, "smelting_fried_egg");
 
         CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Items.EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 100)
                     .criterion(hasItem(Items.EGG), conditionsFromItem(Items.EGG))
@@ -951,10 +994,6 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                     .criterion(hasItem(Items.TURTLE_EGG), conditionsFromItem(Items.TURTLE_EGG))
                     .offerTo(exporter, "campfire_fried_turtle_egg");
 
-                CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.BLUE_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 200)
-                        .criterion(hasItem(Items.BLUE_EGG), conditionsFromItem(Items.BLUE_EGG))
-                        .offerTo(exporter, "smelting_fried_blue_egg");
-
                 CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Items.BLUE_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 100)
                         .criterion(hasItem(Items.BLUE_EGG), conditionsFromItem(Items.BLUE_EGG))
                         .offerTo(exporter, "smoking_fried_blue_egg");
@@ -962,11 +1001,6 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
                 CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Items.BLUE_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 600)
                         .criterion(hasItem(Items.BLUE_EGG), conditionsFromItem(Items.BLUE_EGG))
                         .offerTo(exporter, "campfire_fried_blue_egg");
-
-
-                CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(Items.BROWN_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 200)
-                        .criterion(hasItem(Items.BROWN_EGG), conditionsFromItem(Items.BROWN_EGG))
-                        .offerTo(exporter, "smelting_fried_brown_egg");
 
                 CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(Items.BROWN_EGG), RecipeCategory.FOOD, Iteminit.FRIED_EGG, 0.35f, 100)
                         .criterion(hasItem(Items.BROWN_EGG), conditionsFromItem(Items.BROWN_EGG))
@@ -979,7 +1013,147 @@ public class FoodmodRecipeProvider extends FabricRecipeProvider {
         CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(Iteminit.MARSHMALLOW), RecipeCategory.FOOD, Iteminit.COOKED_MARSHMALLOW, 0.35f, 100)
                     .criterion(hasItem(Iteminit.MARSHMALLOW), conditionsFromItem(Iteminit.MARSHMALLOW))
                     .offerTo(exporter, "campfire_cooked_marshmallow");
-        }
+
+
+
+
+
+                offerBoatRecipe(Iteminit.COCONUT_BOAT, BlockInit.COCONUT_PLANKS);
+                offerButtonRecipe();
+                offerChestBoatRecipe(Iteminit.COCONUT_CHEST_BOAT, Iteminit.COCONUT_BOAT);
+                offerDoorRecipe();
+                offerFenceRecipe();
+                offerFenceGateRecipe();
+                offerHangingSignRecipe(Iteminit.COCONUT_HANGING_SIGN_ITEM, BlockInit.STRIPPED_COCONUT_LOG);
+
+                createShapeless(RecipeCategory.BUILDING_BLOCKS, BlockInit.COCONUT_PLANKS, 4)
+                        .group("planks")
+                        .input(ModTags.Items.COCONUT_LOGS)
+                        .criterion("has_coconut_tag", conditionsFromTag(ModTags.Items.COCONUT_LOGS))
+                        .offerTo(exporter);
+
+                offerWoodenPressurePlateRecipe();
+                offerSignRecipe();
+                offerWoodenSlabRecipe();
+                offerWoodenStairsRecipe();
+                offerTrapdoorRecipe();
+                offerWoodRecipe(BlockInit.COCONUT_WOOD, BlockInit.COCONUT_LOG);
+                offerWoodRecipe(BlockInit.STRIPPED_COCONUT_WOOD, BlockInit.STRIPPED_COCONUT_LOG);
+
+
+            }
+
+
+            private void offerSignRecipe() {
+                createShaped(RecipeCategory.MISC, Iteminit.COCONUT_SIGN_ITEM, 3)
+                        .group("wooden_sign")
+                        .input('#', Iteminit.COCONUT_SIGN_ITEM)
+                        .input('X', Items.STICK)
+                        .pattern("###")
+                        .pattern("###")
+                        .pattern(" X ")
+                        .criterion(hasItem(Iteminit.COCONUT_SIGN_ITEM), conditionsFromItem(Iteminit.COCONUT_SIGN_ITEM))
+                        .offerTo(exporter);
+            }
+
+            private void offerFenceRecipe() {
+                createShaped(RecipeCategory.MISC, BlockInit.COCONUT_FENCE, 3)
+                        .group("wooden_fence")
+                        .input('#', BlockInit.COCONUT_PLANKS)
+                        .input('X', Items.STICK)
+                        .pattern("#X#")
+                        .pattern("#X#")
+                        .criterion(hasItem(BlockInit.COCONUT_PLANKS), conditionsFromItem(BlockInit.COCONUT_PLANKS))
+                        .offerTo(exporter);
+            }
+
+            private void offerFenceGateRecipe() {
+                createShaped(RecipeCategory.REDSTONE, BlockInit.COCONUT_FENCE_GATE, 1)
+                        .group("wooden_fence_gate")
+                        .input('#', BlockInit.COCONUT_PLANKS)
+                        .input('X', Items.STICK)
+                        .pattern("X#X")
+                        .pattern("X#X")
+                        .criterion(hasItem(BlockInit.COCONUT_PLANKS), conditionsFromItem(BlockInit.COCONUT_PLANKS))
+                        .offerTo(exporter);
+            }
+
+
+            private void offerWoodenStairsRecipe() {
+                createShaped(RecipeCategory.BUILDING_BLOCKS, BlockInit.COCONUT_STAIRS, 4)
+                        .group("wooden_stairs")
+                        .input('#', BlockInit.COCONUT_PLANKS)
+                        .pattern("  #")
+                        .pattern(" ##")
+                        .pattern("###")
+                        .criterion(hasItem(BlockInit.COCONUT_PLANKS), conditionsFromItem(BlockInit.COCONUT_PLANKS))
+                        .offerTo(exporter);
+            }
+
+            private void offerWoodenSlabRecipe() {
+                createShaped(RecipeCategory.BUILDING_BLOCKS, BlockInit.COCONUT_SLAB, 6)
+                        .group("wooden_slab")
+                        .input('#', BlockInit.COCONUT_PLANKS)
+                        .pattern("###")
+                        .criterion(hasItem(BlockInit.COCONUT_PLANKS), conditionsFromItem(BlockInit.COCONUT_PLANKS))
+                        .offerTo(exporter);
+            }
+
+            private void offerDoorRecipe() {
+                createShaped(RecipeCategory.REDSTONE, BlockInit.COCONUT_DOOR, 3)
+                        .group("wooden_door")
+                        .input('#', BlockInit.COCONUT_PLANKS)
+                        .pattern(" ##")
+                        .pattern(" ##")
+                        .pattern(" ##")
+                        .criterion(hasItem(BlockInit.COCONUT_PLANKS), conditionsFromItem(BlockInit.COCONUT_PLANKS))
+                        .offerTo(exporter);
+            }
+
+            private void offerTrapdoorRecipe() {
+                createShaped(RecipeCategory.REDSTONE, BlockInit.COCONUT_TRAPDOOR, 2)
+                        .group("wooden_trapdoor")
+                        .input('#', BlockInit.COCONUT_PLANKS)
+                        .pattern("###")
+                        .pattern("###")
+                        .criterion(hasItem(BlockInit.COCONUT_PLANKS), conditionsFromItem(BlockInit.COCONUT_PLANKS))
+                        .offerTo(exporter);
+            }
+
+            private void offerWoodenPressurePlateRecipe() {
+                createShaped(RecipeCategory.REDSTONE, BlockInit.COCONUT_PRESSURE_PLATE, 1)
+                        .group("wooden_pressure_plate")
+                        .input('#', BlockInit.COCONUT_PLANKS)
+                        .pattern("##")
+                        .criterion(hasItem(BlockInit.COCONUT_PLANKS), conditionsFromItem(BlockInit.COCONUT_PLANKS))
+                        .offerTo(exporter);
+            }
+
+            private void offerButtonRecipe() {
+                createShapeless(RecipeCategory.REDSTONE, BlockInit.COCONUT_BUTTON, 1)
+                        .input(BlockInit.COCONUT_PLANKS)
+                        .group("wooden_button")
+                        .criterion(hasItem(BlockInit.COCONUT_PLANKS), conditionsFromItem(BlockInit.COCONUT_PLANKS))
+                        .offerTo(exporter);
+            }
+
+            private void offerWoodRecipe(ItemConvertible output, ItemConvertible input) {
+                createShaped(RecipeCategory.BUILDING_BLOCKS, output, 3)
+                        .group("bark")
+                        .input('#', input)
+                        .pattern("##")
+                        .pattern("##")
+                        .criterion(hasItem(input), conditionsFromItem(input))
+                        .offerTo(exporter);
+            }
+
+
+
+
+
+
+
+
     };
 }
 @Override

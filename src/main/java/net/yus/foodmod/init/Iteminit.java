@@ -1,5 +1,7 @@
 package net.yus.foodmod.init;
 
+import net.yus.foodmod.init.CustomItem.CoconutDrink;
+import net.yus.foodmod.util.ModBoat;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -8,11 +10,76 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.yus.foodmod.Foodmod;
 import net.yus.foodmod.list.FoodList;
-
 import static net.minecraft.item.Items.BOWL;
 import static net.minecraft.item.Items.STICK;
+import static net.yus.foodmod.init.BlockInit.*;
+
 
 public class Iteminit {
+
+
+    public static final Item COCONUT_BALL = registerItem("coconut_ball",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "coconut_ball")))
+                    .food(FoodList.COCONUT_BALL, FoodList.COCONUT_BALL_EFFECT)));
+
+    public static final Item COCONUT = registerItem("coconut",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "coconut")))
+                    .food(FoodList.COCONUT, FoodList.COCONUT_EFFECT)));
+
+    public static final Item COCONUT_DRINK = registerItem("coconut_drink",
+            new CoconutDrink(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "coconut_drink")))
+                    .food(FoodList.COCONUT_DRINK, FoodList.COCONUT_DRINK_EFFECT)
+                    .maxCount(16)
+                    .useRemainder(COCONUT)
+            ));
+
+    public static final Item COCONUT_BOAT = registerItem("coconut_boat",
+            new BoatItem(ModBoat.COCONUT_BOAT, new Item.Settings()
+                    .maxCount(1)
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("foodmod", "coconut_boat")))));
+
+    public static final Item COCONUT_CHEST_BOAT = registerItem("coconut_chest_boat",
+            new BoatItem(ModBoat.COCONUT_CHEST_BOAT, new Item.Settings()
+                    .maxCount(1)
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "coconut_chest_boat")))));
+
+    public static final Item COCONUT_SIGN_ITEM = registerItem("coconut_sign",
+            new SignItem(COCONUT_SIGN, COCONUT_WALL_SIGN, new Item.Settings()
+                    .maxCount(16)
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "coconut_sign")))));
+
+    public static final Item COCONUT_HANGING_SIGN_ITEM = registerItem("coconut_hanging_sign",
+            new SignItem(COCONUT_HANGING_SIGN, COCONUT_WALL_HANGING_SIGN, new Item.Settings()
+                    .maxCount(16)
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "coconut_hanging_sign")))));
+
+    public static final Item MANGO_PIE = registerItem("mango_pie",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "mango_pie")))
+                    .food(FoodList.MANGO_PIE, FoodList.MANGO_PIE_EFFECT)));
+
+    public static final Item MANGO_DONUT = registerItem("mango_donut",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "mango_donut")))
+                    .food(FoodList.MANGO_DONUT, FoodList.MANGO_DONUT_EFFECT)));
+
+    public static final Item MANGO_BUBBLEGUM = registerItem("mango_bubblegum",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "mango_bubblegum")))
+                    .food(FoodList.MANGO_BUBBLEGUM, FoodList.MANGO_BUBBLEGUM_EFFECT)));
+
+    public static final Item MANGO_ICE_CREAM = registerItem("mango_ice_cream",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "mango_ice_cream")))
+                    .food(FoodList.MANGO_ICE_CREAM, FoodList.MANGO_ICE_CREAM_EFFECT)));
+
+    public static final Item MANGO = registerItem("mango",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "mango")))
+                    .food(FoodList.MANGO)));
 
     public static final Item KIWI_PIE = registerItem("kiwi_pie",
             new Item(new Item.Settings()
@@ -94,7 +161,6 @@ public class Iteminit {
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "banana")))
                     .food(FoodList.BANANA)));
 
-
     public static final Item KIWI = registerItem("kiwi",
             new Item(new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "kiwi")))
@@ -104,17 +170,17 @@ public class Iteminit {
     public static final Item CHOCOLATE_CAKE = registerItem("chocolate_cake",
             new Item(new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "chocolate_cake")))
-                    .food(FoodList.CHOCOLATE_CAKE)));
+                    .food(FoodList.CHOCOLATE_CAKE, FoodList.CHOCOLATE_CAKE_EFFECT)));
 
     public static final Item BROWNIE = registerItem("brownie",
             new Item(new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "brownie")))
-                    .food(FoodList.BROWNIE)));
+                    .food(FoodList.BROWNIE, FoodList.BROWNIE_EFFECT)));
 
     public static final Item CHOCOLATE_BAR = registerItem("chocolate_bar",
             new Item(new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "chocolate_bar")))
-                    .food(FoodList.CHOCOLATE_BAR)));
+                    .food(FoodList.CHOCOLATE_BAR, FoodList.CHOCOLATE_BAR_EFFECT)));
 
     public static final Item SWEET_CANDY = registerItem("sweet_candy",
             new Item(new Item.Settings()
@@ -159,7 +225,7 @@ public class Iteminit {
     public static final Item PANCAKE = registerItem("pancake",
             new Item(new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "pancake")))
-                    .food(FoodList.PANCAKE)));
+                    .food(FoodList.PANCAKE, FoodList.PANCAKE_EFFECT)));
 
     public static final Item BAGEL = registerItem("bagel",
             new Item(new Item.Settings()
@@ -201,7 +267,7 @@ public class Iteminit {
     public static final Item CHOCOLATE_DONUT = registerItem("chocolate_donut",
             new Item(new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "chocolate_donut")))
-                    .food(FoodList.CHOCOLATE_DONUT)));
+                    .food(FoodList.CHOCOLATE_DONUT, FoodList.CHOCOLATE_DONUT_EFFECT)));
 
     public static final Item PINK_DONUT = registerItem("pink_donut",
             new Item(new Item.Settings()
@@ -234,7 +300,7 @@ public class Iteminit {
     public static final Item CHOCOLATE_ICE_CREAM = registerItem("chocolate_ice_cream",
             new Item(new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "chocolate_ice_cream")))
-                    .food(FoodList.CHOCOLATE_ICE_CREAM)));
+                    .food(FoodList.CHOCOLATE_ICE_CREAM, FoodList.CHOCOLATE_ICE_CREAM_EFFECT)));
 
     public static final Item SANDWICH_COOKIE_ICE_CREAM = registerItem("sandwich_cookie_ice_cream",
             new Item(new Item.Settings()
@@ -380,6 +446,8 @@ public class Iteminit {
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "cooked_flesh")))
                     .food(FoodList.COOKED_FLESH)));
 
+
+
     public static final Item COOKED_SPIDER_EYE = registerItem("cooked_spider_eye",
             new Item(new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "cooked_spider_eye")))
@@ -486,6 +554,11 @@ public class Iteminit {
                     .food(FoodList.CORN_DOG)
                     .useRemainder(STICK)));
 
+    public static final Item FRUIT_SKEWER = registerItem("fruit_skewer",
+            new Item(new Item.Settings()
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "fruit_skewer")))
+                    .food(FoodList.FRUIT_SKEWER)
+                    .useRemainder(STICK)));
 
     public static final Item BANANA_SPLIT = registerItem("banana_split",
             new Item(new Item.Settings()
@@ -501,10 +574,10 @@ public class Iteminit {
                     .maxCount(1)
                     .useRemainder(BOWL)));
 
-    public static final Item RICE_PUDDING = registerItem("rice_pudding",
+    public static final Item COCONUT_RICE = registerItem("coconut_rice",
             new Item(new Item.Settings()
-                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "rice_pudding")))
-                    .food(FoodList.RICE_PUDDING)
+                    .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, "coconut_rice")))
+                    .food(FoodList.COCONUT_RICE, FoodList.COCONUT_RICE_EFFECT)
                     .maxCount(1)
                     .useRemainder(BOWL)));
 

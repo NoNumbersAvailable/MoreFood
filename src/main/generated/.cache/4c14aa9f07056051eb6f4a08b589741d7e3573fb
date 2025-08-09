@@ -1,1 +1,18 @@
-// 1.21.7	-999999999-01-01T00:00:00	MoreFood/Tags for minecraft:block
+// 1.21.8	-999999999-01-01T00:00:00	MoreFood/Tags for minecraft:block
+fa062888bc4f75b43bb64619b183c9b21e31cda6 data/foodmod/tags/block/coconut_logs.json
+80012e9d73f19fc8ab8d80102206aaf8f5ff92fc data/minecraft/tags/block/fence_gates.json
+dc49b6ca0b67216ee3f14929189cb205c32bdc19 data/minecraft/tags/block/fences.json
+8375895671fd4b128b17479fdf79b4e8de66a04f data/minecraft/tags/block/leaves.json
+53bf11fcb30686c8983f05a3bfb437e6f2a9a388 data/minecraft/tags/block/logs.json
+1e7941785b628295f67d398fb32c8666618f7363 data/minecraft/tags/block/logs_that_burn.json
+ed110d75bba9be035fb02bd3ccc58aae8cacc687 data/minecraft/tags/block/mineable/axe.json
+c8f795a8e83b7133306459803e744052ff7d0a39 data/minecraft/tags/block/mineable/hoe.json
+b56fcea60cd6906f8ce5a280d077817fb7c2c00b data/minecraft/tags/block/mineable/shovel.json
+56480f9eca1a4fb1ee4a2895f707b786c35b0fdb data/minecraft/tags/block/planks.json
+f43f2f0cf4383a5c70bd0f2b4c1d30495b8e8741 data/minecraft/tags/block/saplings.json
+a1151e7d59899e44003d5ef7ef29b5163c5e481d data/minecraft/tags/block/wooden_buttons.json
+a414bae027be180c4507f4ca374c3f289f231eab data/minecraft/tags/block/wooden_doors.json
+8bc1a4c94b986cb8ab104895158e31bb8da97acc data/minecraft/tags/block/wooden_pressure_plates.json
+0c75aaf20dcb19d79ced75507aa9c015a824216b data/minecraft/tags/block/wooden_slabs.json
+db5828140a7def89f6ca6cb5a9f2c95d183bd4ec data/minecraft/tags/block/wooden_stairs.json
+5954e5ac0c923680349f705161d6eb8ebd3e69a9 data/minecraft/tags/block/wooden_trapdoors.json

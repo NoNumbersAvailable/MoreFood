@@ -1,0 +1,20 @@
+{
+  "values": [
+    "foodmod:coconut_sign",
+    "foodmod:coconut_hanging_sign",
+    "foodmod:coconut_log",
+    "foodmod:stripped_coconut_log",
+    "foodmod:coconut_wood",
+    "foodmod:stripped_coconut_wood",
+    "foodmod:coconut_planks",
+    "foodmod:coconut_stairs",
+    "foodmod:coconut_slab",
+    "foodmod:coconut_fence",
+    "foodmod:coconut_fence_gate",
+    "foodmod:coconut_door",
+    "foodmod:coconut_trapdoor",
+    "foodmod:coconut_pressure_plate",
+    "foodmod:coconut_button",
+    "foodmod:food_stand"
+  ]
+}

@@ -3,12 +3,13 @@
   "category": "misc",
   "ingredients": [
     "minecraft:apple",
+    "foodmod:banana",
     "minecraft:melon_slice",
     "minecraft:sweet_berries",
-    "minecraft:glow_berries",
-    "foodmod:banana",
-    "foodmod:kiwi",
     "foodmod:blue_berries",
+    "minecraft:glow_berries",
+    "foodmod:kiwi",
+    "foodmod:mango",
     "minecraft:bowl"
   ],
   "result": {

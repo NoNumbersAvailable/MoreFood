@@ -2,15 +2,16 @@ package net.yus.foodmod.data.provider;
 
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.client.data.BlockStateModelGenerator;
-import net.minecraft.client.data.ItemModelGenerator;
-import net.minecraft.client.data.Models;
-import net.minecraft.client.data.TexturedModel;
+import net.minecraft.block.Block;
+import net.minecraft.client.data.*;
+import net.minecraft.util.Identifier;
 import net.yus.foodmod.init.BlockInit;
 import net.yus.foodmod.init.CustomBlocks.BlueBerryBush;
 import net.yus.foodmod.init.Iteminit;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 
+import static net.minecraft.client.data.BlockStateModelGenerator.createSingletonBlockState;
+import static net.minecraft.client.data.BlockStateModelGenerator.createWeightedVariant;
 
 
 public class FoodmodModelProvider extends FabricModelProvider {
@@ -24,17 +25,40 @@ public class FoodmodModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.RICE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.SUGAR_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.COCOA_BEANS_BLOCK);
-
+        BlockStateModelGenerator.BlockTexturePool coconutPool = blockStateModelGenerator.registerCubeAllModelTexturePool(BlockInit.COCONUT_PLANKS);
+        coconutPool.stairs(BlockInit.COCONUT_STAIRS);
+        coconutPool.slab(BlockInit.COCONUT_SLAB);
+        coconutPool.button(BlockInit.COCONUT_BUTTON);
+        coconutPool.pressurePlate(BlockInit.COCONUT_PRESSURE_PLATE);
+        coconutPool.fence(BlockInit.COCONUT_FENCE);
+        coconutPool.fenceGate(BlockInit.COCONUT_FENCE_GATE);
+        blockStateModelGenerator.registerDoor(BlockInit.COCONUT_DOOR);
+        blockStateModelGenerator.registerOrientableTrapdoor(BlockInit.COCONUT_TRAPDOOR);
         blockStateModelGenerator.createLogTexturePool(BlockInit.SUGAR_CANE_BALE).log(BlockInit.SUGAR_CANE_BALE);
+        blockStateModelGenerator.createLogTexturePool(BlockInit.STRIPPED_COCONUT_LOG).log(BlockInit.STRIPPED_COCONUT_LOG).wood(BlockInit.STRIPPED_COCONUT_WOOD);
+        blockStateModelGenerator.createLogTexturePool(BlockInit.COCONUT_LOG).log(BlockInit.COCONUT_LOG).wood(BlockInit.COCONUT_WOOD);
         blockStateModelGenerator.createLogTexturePool(BlockInit.CORN_BALE).log(BlockInit.CORN_BALE);
         blockStateModelGenerator.registerSingleton(BlockInit.FOOD_STAND, TexturedModel.ORIENTABLE_WITH_BOTTOM);
-
-       blockStateModelGenerator.registerTintableCrossBlockStateWithStages(BlockInit.BLUE_BERRY_BUSH, BlockStateModelGenerator.CrossType.NOT_TINTED,
+        blockStateModelGenerator.registerHangingSign(BlockInit.STRIPPED_COCONUT_LOG, BlockInit.COCONUT_HANGING_SIGN, BlockInit.COCONUT_WALL_HANGING_SIGN);
+        registerSign(blockStateModelGenerator, BlockInit.COCONUT_PLANKS, BlockInit.COCONUT_SIGN, BlockInit.COCONUT_WALL_SIGN);
+        blockStateModelGenerator.registerTintableCross(BlockInit.COCONUT_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(BlockInit.BLUE_BERRY_BUSH, BlockStateModelGenerator.CrossType.NOT_TINTED,
              BlueBerryBush.AGE, 0, 1, 2, 3);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(Iteminit.COCONUT_BALL, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.COCONUT_DRINK, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.COCONUT, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.COCONUT_BOAT, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.COCONUT_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.FRUIT_SKEWER, Models.HANDHELD);
+        itemModelGenerator.register(Iteminit.MANGO_BUBBLEGUM, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.MANGO_DONUT, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.MANGO_ICE_CREAM, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.MANGO_PIE, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.MANGO, Models.GENERATED);
         itemModelGenerator.register(Iteminit.CHORUS_FRUIT_PIE, Models.GENERATED);
         itemModelGenerator.register(Iteminit.KIWI_PIE, Models.GENERATED);
         itemModelGenerator.register(Iteminit.BANANA_PIE, Models.GENERATED);
@@ -129,10 +153,18 @@ public class FoodmodModelProvider extends FabricModelProvider {
         itemModelGenerator.register(Iteminit.BUBBLEGUM, Models.GENERATED);
         itemModelGenerator.register(Iteminit.BANANA_SPLIT, Models.GENERATED);
         itemModelGenerator.register(Iteminit.FRUIT_SALAD, Models.GENERATED);
-        itemModelGenerator.register(Iteminit.RICE_PUDDING, Models.GENERATED);
+        itemModelGenerator.register(Iteminit.COCONUT_RICE, Models.GENERATED);
         itemModelGenerator.register(Iteminit.MEAT_STEW, Models.GENERATED);
         itemModelGenerator.register(Iteminit.FISH_STEW, Models.GENERATED);
         itemModelGenerator.register(Iteminit.NETHER_WART_SOUP, Models.GENERATED);
         itemModelGenerator.register(Iteminit.FUNGUS_STEW, Models.GENERATED);
+    }
+
+
+    public static void registerSign(BlockStateModelGenerator blockStateModelGenerator, Block particleBlock, Block signBlock, Block wallSignBlock) {
+        Identifier identifier = Models.PARTICLE.upload(signBlock, TextureMap.particle(particleBlock), blockStateModelGenerator.modelCollector);
+        blockStateModelGenerator.blockStateCollector.accept(createSingletonBlockState(signBlock, createWeightedVariant(identifier)));
+        blockStateModelGenerator.blockStateCollector.accept(createSingletonBlockState(wallSignBlock, createWeightedVariant(identifier)));
+        blockStateModelGenerator.registerItemModel(signBlock.asItem());
     }
 }

@@ -1,10 +1,14 @@
 package net.yus.foodmod;
 
 import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.ModInitializer;
-import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.block.DispenserBlock;
+import net.minecraft.block.dispenser.BoatDispenserBehavior;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
@@ -15,8 +19,10 @@ import net.yus.foodmod.data.provider.ModLootTableModifiers;
 import net.yus.foodmod.init.BlockInit;
 import net.yus.foodmod.init.ItemGroupInit;
 import net.yus.foodmod.init.Iteminit;
+import net.yus.foodmod.util.ModBoat;
 import net.yus.foodmod.villager.ModVillagers;
 import net.yus.foodmod.world.gen.ModWorldGeneration;
+import net.yus.foodmod.world.tree.custom.ModFoliagePlacerTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,8 +37,7 @@ public class Foodmod implements ModInitializer {
 
 
 
-
-        AutoConfig.register(FoodmodConfig.class, GsonConfigSerializer::new);
+        AutoConfig.register(FoodmodConfig.class, JanksonConfigSerializer::new);
         CONFIG = AutoConfig.getConfigHolder(FoodmodConfig.class).getConfig();
         ItemGroupInit.registerItemGroups();
         Iteminit.registerModItems();
@@ -40,8 +45,8 @@ public class Foodmod implements ModInitializer {
         ModLootTableModifiers.modifyLootTables();
         ModVillagers.registerVillagers();
         ModWorldGeneration.generateModWorldGen();
-
-
+        ModBoat.registerEntityTypes();
+        ModFoliagePlacerTypes.register();
         TradeOfferHelper.registerVillagerOffers(ModVillagers.FOOD_MASTER_KEY, 1, factories -> {
             factories.add((entity, random) -> new TradeOffer(
                     new TradedItem(Iteminit.RICE, 15),
@@ -72,8 +77,17 @@ public class Foodmod implements ModInitializer {
                     new TradedItem(Items.EMERALD, 2),
                     new ItemStack(Iteminit.BANANA, 2),
                     16, 2, 0.05f));
-        });
 
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Items.EMERALD, 2),
+                    new ItemStack(Iteminit.KIWI, 2),
+                    16, 2, 0.05f));
+
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Items.EMERALD, 2),
+                    new ItemStack(Iteminit.MANGO, 2),
+                    16, 2, 0.05f));
+        });
         TradeOfferHelper.registerVillagerOffers(ModVillagers.FOOD_MASTER_KEY, 2, factories -> {
             factories.add((entity, random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 1),
@@ -83,6 +97,11 @@ public class Foodmod implements ModInitializer {
             factories.add((entity, random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 1),
                     new ItemStack(Iteminit.MARSHMALLOW, 6),
+                    16, 5, 0.05f));
+
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Items.EMERALD, 2),
+                    new ItemStack(Iteminit.COCONUT_DRINK, 1),
                     16, 5, 0.05f));
 
             factories.add((entity, random) -> new TradeOffer(
@@ -151,6 +170,11 @@ public class Foodmod implements ModInitializer {
 
             factories.add((entity, random) -> new TradeOffer(
                     new TradedItem(Items.EMERALD, 1),
+                    new ItemStack(Iteminit.MANGO_BUBBLEGUM, 4),
+                    16, 15, 0.05f));
+
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Items.EMERALD, 1),
                     new ItemStack(Iteminit.BANANA_BUBBLEGUM, 4),
                     16, 15, 0.05f));
 
@@ -174,12 +198,8 @@ public class Foodmod implements ModInitializer {
                     new ItemStack(Iteminit.MELON_BUBBLEGUM, 4),
                     16, 15, 0.05f));
 
-            factories.add((entity, random) -> new TradeOffer(
-                    new TradedItem(Items.EMERALD, 1),
-                    new ItemStack(Iteminit.CHORUS_FRUIT_BUBBLEGUM, 4),
-                    16, 15, 0.05f));
     });
-            TradeOfferHelper.registerVillagerOffers(ModVillagers.FOOD_MASTER_KEY, 5, factories -> {
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.FOOD_MASTER_KEY, 5, factories -> {
                 factories.add((entity, random) -> new TradeOffer(
                         new TradedItem(Items.EMERALD, 8),
                         new ItemStack(Iteminit.GOLDEN_POTATO, 2),
@@ -211,6 +231,7 @@ public class Foodmod implements ModInitializer {
         CompostingChanceRegistry.INSTANCE.add(Iteminit.RICE, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.CORN, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.BANANA, 0.65f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.MANGO, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.KIWI, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.COOKED_CORN, 0.65f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.POPCORN, 0.85f);
@@ -230,10 +251,12 @@ public class Foodmod implements ModInitializer {
         CompostingChanceRegistry.INSTANCE.add(Iteminit.RICE_SEEDS, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.CANDY_CANE, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.BLUE_BERRIES, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.COCONUT, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.RICE_SEEDS, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.BUBBLEGUM, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.BLUE_BERRY_BUBBLEGUM, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.GLOW_BERRY_BUBBLEGUM, 0.50f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.MANGO_BUBBLEGUM, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.APPLE_BUBBLEGUM, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.BANANA_BUBBLEGUM, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.MELON_BUBBLEGUM, 0.50f);
@@ -241,6 +264,7 @@ public class Foodmod implements ModInitializer {
         CompostingChanceRegistry.INSTANCE.add(Iteminit.KIWI_BUBBLEGUM, 0.50f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.ICE_CREAM, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.CHOCOLATE_ICE_CREAM, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.MANGO_ICE_CREAM, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.SWEET_BERRY_ICE_CREAM, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.BLUE_BERRY_ICE_CREAM, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.GLOW_BERRY_ICE_CREAM, 0.85f);
@@ -261,6 +285,7 @@ public class Foodmod implements ModInitializer {
         CompostingChanceRegistry.INSTANCE.add(Iteminit.BAGEL, 1f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.WHITE_DONUT, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.CHORUS_FRUIT_DONUT, 0.85f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.MANGO_DONUT, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.APPLE_DONUT, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.MELON_DONUT, 0.85f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.GLOW_BERRY_DONUT, 0.85f);
@@ -278,8 +303,23 @@ public class Foodmod implements ModInitializer {
         CompostingChanceRegistry.INSTANCE.add(Iteminit.GLOW_BERRY_PIE, 1f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.APPLE_PIE, 1f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.MELON_PIE, 1f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.MANGO_PIE, 1f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.PIZZA, 1f);
+        CompostingChanceRegistry.INSTANCE.add(Iteminit.COCONUT_BALL, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(BlockInit.COCONUT_SAPLING, 0.3f);
+        CompostingChanceRegistry.INSTANCE.add(BlockInit.COCONUT_LEAVES, 0.3f);
         CompostingChanceRegistry.INSTANCE.add(Iteminit.SANDWICH_COOKIE_ICE_CREAM, 0.85f);
+        StrippableBlockRegistry.register(BlockInit.COCONUT_WOOD, BlockInit.STRIPPED_COCONUT_WOOD);
+        StrippableBlockRegistry.register(BlockInit.COCONUT_LOG, BlockInit.STRIPPED_COCONUT_LOG);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockInit.COCONUT_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockInit.COCONUT_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockInit.STRIPPED_COCONUT_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockInit.STRIPPED_COCONUT_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockInit.COCONUT_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(BlockInit.COCONUT_LEAVES, 30, 60);
+        DispenserBlock.registerBehavior(Iteminit.COCONUT_BOAT, new BoatDispenserBehavior(ModBoat.COCONUT_BOAT));
+        DispenserBlock.registerBehavior(Iteminit.COCONUT_CHEST_BOAT, new BoatDispenserBehavior(ModBoat.COCONUT_CHEST_BOAT));
+
     }
 
 

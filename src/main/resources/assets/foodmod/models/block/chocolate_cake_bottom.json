@@ -1,6 +1,0 @@
-{
-  "parent": "block/cake",
-  "textures": {
-    "cake": "foodmod:block/chocolate_cake_bottom"
-  }
-}

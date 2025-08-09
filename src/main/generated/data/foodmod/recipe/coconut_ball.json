@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "foodmod:coconut",
+    "minecraft:milk_bucket",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "count": 3,
+    "id": "foodmod:coconut_ball"
+  }
+}

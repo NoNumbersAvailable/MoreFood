@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_fence_gate",
+  "key": {
+    "#": "foodmod:coconut_planks",
+    "X": "minecraft:stick"
+  },
+  "pattern": [
+    "X#X",
+    "X#X"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:coconut_fence_gate"
+  }
+}

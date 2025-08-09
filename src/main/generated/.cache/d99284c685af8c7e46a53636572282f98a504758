@@ -1,1 +1,7 @@
-// 1.21.7	-999999999-01-01T00:00:00	MoreFood/
+// 1.21.8	-999999999-01-01T00:00:00	MoreFood/
+5c506a2959c846972cbbd071e9b9f8ece34904ac data/foodmod/worldgen/configured_feature/coconut.json
+b9fea53ae3919eea77340d8ea06911b9d4079fa3 data/foodmod/worldgen/configured_feature/short_dry_grass.json
+125231d77bf25c758dff33a336420fef549c9f08 data/foodmod/worldgen/configured_feature/tall_dry_grass.json
+bb9fb7e7b213c0ee8f7d34951c13d9453ac81bde data/foodmod/worldgen/placed_feature/coconut_placed.json
+6d3fe5b63498fa178bd968fe207650a24cf10219 data/foodmod/worldgen/placed_feature/short_dry_grass_placed.json
+e6ff3814126372e16ca563807936a2d831b2fdee data/foodmod/worldgen/placed_feature/tall_dry_grass_placed.json

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coconut_tag": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#foodmod:coconut_logs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "foodmod:coconut_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_coconut_tag"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "foodmod:coconut_planks"
+    ]
+  }
+}

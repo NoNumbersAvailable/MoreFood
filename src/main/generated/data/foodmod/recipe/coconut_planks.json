@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "#foodmod:coconut_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "foodmod:coconut_planks"
+  }
+}

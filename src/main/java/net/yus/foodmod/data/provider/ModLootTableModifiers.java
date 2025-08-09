@@ -15,6 +15,12 @@ import net.yus.foodmod.init.Iteminit;
 
 public class ModLootTableModifiers {
 
+    private static final Identifier COCONUT_LEAVES_ID
+            = Identifier.of("foodmod", "blocks/coconut_leaves");
+
+    private static final Identifier ACACIA_LEAVES_ID
+            = Identifier.of("minecraft", "blocks/acacia_leaves");
+
     private static final Identifier JUNGLE_LEAVES_ID
             = Identifier.of("minecraft", "blocks/jungle_leaves");
 
@@ -136,12 +142,27 @@ public class ModLootTableModifiers {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
-
+            if(source.isBuiltin() && ACACIA_LEAVES_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.005f))
+                        .with(ItemEntry.builder(Iteminit.MANGO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
             if(source.isBuiltin() && JUNGLE_LEAVES_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.005f))
                         .with(ItemEntry.builder(Iteminit.BANANA))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && COCONUT_LEAVES_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.0083f))
+                        .with(ItemEntry.builder(Iteminit.COCONUT))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
@@ -198,6 +219,22 @@ public class ModLootTableModifiers {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(Iteminit.RICE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && STRONGHOLD_CROSSING_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.CORN))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && STRONGHOLD_CORRIDOR_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.CORN))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 3.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
@@ -233,11 +270,51 @@ public class ModLootTableModifiers {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
+            if(source.isBuiltin() && SIMPLE_DUNGEON_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.25f))
+                        .with(ItemEntry.builder(Iteminit.KIWI))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && SIMPLE_DUNGEON_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.25f))
+                        .with(ItemEntry.builder(Iteminit.MANGO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.BANANA))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.KIWI))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.MANGO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
             if(source.isBuiltin() && SHIPWRECK_STRUCTURE_SUPPLY_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(Iteminit.BANANA))
+                        .with(ItemEntry.builder(Iteminit.COCONUT))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
@@ -316,6 +393,14 @@ public class ModLootTableModifiers {
             if(source.isBuiltin() && JUNGLE_TEMPLE_STRUCTURE_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.COCONUT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && JUNGLE_TEMPLE_STRUCTURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(Iteminit.BANANA))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
@@ -365,6 +450,14 @@ public class ModLootTableModifiers {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.COCONUT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && DESERT_PYRAMID_STRUCTURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
                         .with(ItemEntry.builder(Iteminit.GOLDEN_POTATO))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
@@ -372,7 +465,7 @@ public class ModLootTableModifiers {
             if(source.isBuiltin() && DESERT_PYRAMID_STRUCTURE_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .conditionally(RandomChanceLootCondition.builder(0.4f))
                         .with(ItemEntry.builder(Iteminit.CACTUS_LEAF))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 5.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
@@ -460,7 +553,7 @@ public class ModLootTableModifiers {
             if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(Iteminit.BLUE_BERRIES))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
@@ -468,9 +561,33 @@ public class ModLootTableModifiers {
             if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.4f))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(Iteminit.BANANA))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.MANGO))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.KIWI))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.COCONUT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 6.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
             if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
@@ -478,7 +595,7 @@ public class ModLootTableModifiers {
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(Iteminit.CORN))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 10.0f)).build());
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 8.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
             if(source.isBuiltin() && ANCIENT_CITY_ICE_ID.equals(key.getValue())) {
@@ -562,6 +679,22 @@ public class ModLootTableModifiers {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
+            if(source.isBuiltin() && VILLAGE_STRUCTURE_DESERT_HOUSE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(Iteminit.COCONUT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && VILLAGE_STRUCTURE_DESERT_HOUSE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(Iteminit.COCONUT_DRINK))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
             if(source.isBuiltin() && VILLAGE_STRUCTURE_SNOWY_HOUSE_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
@@ -605,7 +738,7 @@ public class ModLootTableModifiers {
             if(source.isBuiltin() && BURIED_TREASURE_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.75f))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
                         .with(ItemEntry.builder(Iteminit.COOKED_PUFFERFISH))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
@@ -613,12 +746,35 @@ public class ModLootTableModifiers {
             if(source.isBuiltin() && BURIED_TREASURE_ID.equals(key.getValue())) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.75f))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
                         .with(ItemEntry.builder(Iteminit.COOKED_TROPICAL_FISH))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0f, 4.0f)).build());
                 tableBuilder.pool(poolBuilder.build());
             }
-
+            if(source.isBuiltin() && BURIED_TREASURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.75f))
+                        .with(ItemEntry.builder(Iteminit.COCONUT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BURIED_TREASURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.4f))
+                        .with(ItemEntry.builder(Iteminit.COCONUT_BALL))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 6.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+            if(source.isBuiltin() && BURIED_TREASURE_ID.equals(key.getValue())) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .with(ItemEntry.builder(Iteminit.COCONUT_DRINK))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
 
 
         });

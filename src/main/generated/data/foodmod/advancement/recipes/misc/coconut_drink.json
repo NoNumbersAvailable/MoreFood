@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coconut": {
+      "conditions": {
+        "items": [
+          {
+            "items": "foodmod:coconut"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "foodmod:coconut_drink"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_coconut"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "foodmod:coconut_drink"
+    ]
+  }
+}

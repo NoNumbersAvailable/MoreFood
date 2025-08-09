@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      "foodmod:mango",
+      "foodmod:kiwi",
+      "foodmod:banana"
+    ],
+    "minecraft:sugar",
+    "foodmod:coconut"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:coconut_drink"
+  }
+}

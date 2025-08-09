@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    [
+      "minecraft:sweet_berries",
+      "foodmod:blue_berries",
+      "minecraft:glow_berries"
+    ],
+    [
+      "minecraft:apple",
+      "foodmod:banana",
+      "minecraft:melon"
+    ],
+    [
+      "foodmod:kiwi",
+      "foodmod:mango",
+      "minecraft:chorus_fruit"
+    ],
+    "minecraft:stick"
+  ],
+  "result": {
+    "count": 1,
+    "id": "foodmod:fruit_skewer"
+  }
+}

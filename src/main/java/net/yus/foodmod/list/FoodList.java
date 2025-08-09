@@ -7,11 +7,29 @@ import net.minecraft.component.type.ConsumableComponent;
 import net.minecraft.component.type.ConsumableComponents;
 import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 import net.minecraft.item.consume.RemoveEffectsConsumeEffect;
+import net.minecraft.sound.SoundEvents;
 
 import java.util.List;
 
 public class FoodList {
 
+    public static final FoodComponent COCONUT = (new FoodComponent.Builder())
+            .nutrition(4).saturationModifier(0.3f).build();
+
+    public static final ConsumableComponent COCONUT_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.MINING_FATIGUE)).build();
+
+    public static final FoodComponent COCONUT_BALL = (new FoodComponent.Builder())
+            .nutrition(2).saturationModifier(0.3f).build();
+
+    public static final ConsumableComponent COCONUT_BALL_EFFECT = ConsumableComponents.food()
+            .consumeSeconds(0.8F).consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.MINING_FATIGUE)).build();
+
+    public static final FoodComponent FRUIT_SKEWER = (new FoodComponent.Builder())
+            .nutrition(10).saturationModifier(0.8f).build();
+
+    public static final FoodComponent MANGO = (new FoodComponent.Builder())
+            .nutrition(4).saturationModifier(0.3f).build();
 
     public static final FoodComponent PIZZA = (new FoodComponent.Builder())
             .nutrition(12).saturationModifier(0.8f).build();
@@ -35,7 +53,11 @@ public class FoodList {
             .nutrition(14).saturationModifier(0.8f).build();
 
     public static final FoodComponent PANCAKE = (new FoodComponent.Builder())
-            .nutrition(4).saturationModifier(0.6F).build();
+            .nutrition(4).saturationModifier(0.6F).alwaysEdible().build();
+
+    public static final ConsumableComponent PANCAKE_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.WEAKNESS))
+            .build();
 
     public static final FoodComponent RICE_BALLS = (new FoodComponent.Builder())
             .nutrition(2).saturationModifier(0.6F).build();
@@ -77,19 +99,31 @@ public class FoodList {
             .nutrition(4).saturationModifier(0.6F).build();
 
     public static final FoodComponent CHOCOLATE_DONUT = (new FoodComponent.Builder())
-            .nutrition(5).saturationModifier(0.6F).build();
+            .nutrition(5).saturationModifier(0.6F).alwaysEdible().build();
+
+    public static final ConsumableComponent CHOCOLATE_DONUT_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.WEAKNESS)).build();
 
     public static final FoodComponent BLUE_BERRIES = (new FoodComponent.Builder())
             .nutrition(2).saturationModifier(0.3F).build();
 
     public static final FoodComponent CHOCOLATE_CAKE = (new FoodComponent.Builder())
-            .nutrition(15).saturationModifier(0.1F).build();
+            .nutrition(15).saturationModifier(0.1F).alwaysEdible().build();
+
+    public static final ConsumableComponent CHOCOLATE_CAKE_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.WEAKNESS)).build();
 
     public static final FoodComponent CHOCOLATE_BAR = (new FoodComponent.Builder())
-            .nutrition(3).saturationModifier(0.1F).build();
+            .nutrition(3).saturationModifier(0.1F).alwaysEdible().build();
+
+    public static final ConsumableComponent CHOCOLATE_BAR_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.WEAKNESS)).build();
 
     public static final FoodComponent BROWNIE = (new FoodComponent.Builder())
-            .nutrition(8).saturationModifier(0.8F).build();
+            .nutrition(8).saturationModifier(0.8F).alwaysEdible().build();
+
+    public static final ConsumableComponent BROWNIE_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.WEAKNESS)).build();
 
     public static final FoodComponent RICE = (new FoodComponent.Builder())
             .nutrition(1).saturationModifier(0.3F).build();
@@ -107,7 +141,11 @@ public class FoodList {
             .nutrition(2).saturationModifier(0.1F).build();
 
     public static final FoodComponent CHOCOLATE_ICE_CREAM = (new FoodComponent.Builder())
-            .nutrition(6).saturationModifier(0.1F).build();
+            .nutrition(6).saturationModifier(0.1F).alwaysEdible().build();
+
+    public static final ConsumableComponent CHOCOLATE_ICE_CREAM_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.WEAKNESS)).build();
+
 
     public static final FoodComponent COOKED_SPIDER_EYE = (new FoodComponent.Builder())
             .nutrition(3).saturationModifier(0.8f).build();
@@ -121,7 +159,6 @@ public class FoodList {
     public static final FoodComponent COOKED_NETHER_WART = (new FoodComponent.Builder())
             .nutrition(2).saturationModifier(0.6F).build();
 
-
     public static final FoodComponent HONEY_BAR = new FoodComponent.Builder()
             .nutrition(3).saturationModifier(0.1f).alwaysEdible().build();
 
@@ -133,7 +170,7 @@ public class FoodList {
             .nutrition(7).saturationModifier(0.3f).alwaysEdible().build();
 
     public static final ConsumableComponent GLOW_BERRY_PIE_EFFECT = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.GLOWING, 350, 0)), 0.9f)).consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.HASTE, 450, 0)), 0.9f)).build();
+            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.GLOWING, 350, 0)), 0.9f)).consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.HASTE, 350, 0)), 0.9f)).build();
 
     public static final FoodComponent SWEET_BERRY_PIE = new FoodComponent.Builder()
             .nutrition(7).saturationModifier(0.3f).alwaysEdible().build();
@@ -146,6 +183,12 @@ public class FoodList {
 
     public static final ConsumableComponent BLUE_BERRY_PIE_EFFECT = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 350, 0)), 0.9f)).build();
+
+    public static final FoodComponent MANGO_PIE = new FoodComponent.Builder()
+            .nutrition(7).saturationModifier(0.3f).alwaysEdible().build();
+
+    public static final ConsumableComponent MANGO_PIE_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 350, 0)), 0.9f)).build();
 
     public static final FoodComponent FRIED_TURTLE_EGG = new FoodComponent.Builder()
             .nutrition(5).saturationModifier(1.6f).alwaysEdible().build();
@@ -175,13 +218,19 @@ public class FoodList {
             .nutrition(5).saturationModifier(0.1f).alwaysEdible().build();
 
     public static final ConsumableComponent GLOW_BERRY_ICE_CREAM_EFFECT = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.GLOWING, 300, 0)), 0.9f)).consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.HASTE, 400, 0)), 0.9f)).build();
+            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.GLOWING, 300, 0)), 0.9f)).consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.HASTE, 300, 0)), 0.9f)).build();
 
     public static final FoodComponent CHORUS_FRUIT_ICE_CREAM = new FoodComponent.Builder()
             .nutrition(5).saturationModifier(0.1f).alwaysEdible().build();
 
     public static final ConsumableComponent CHORUS_FRUIT_ICE_CREAM_EFFECT = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 300, 0)), 0.9f)).build();
+
+    public static final FoodComponent MANGO_ICE_CREAM = new FoodComponent.Builder()
+            .nutrition(5).saturationModifier(0.1f).alwaysEdible().build();
+
+    public static final ConsumableComponent MANGO_ICE_CREAM_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 300, 0)), 0.9f)).build();
 
     public static final FoodComponent MELON_ICE_CREAM = new FoodComponent.Builder()
             .nutrition(5).saturationModifier(0.1f).alwaysEdible().build();
@@ -237,6 +286,12 @@ public class FoodList {
     public static final ConsumableComponent BLUE_BERRY_DONUT_EFFECT = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 400, 0)), 0.9f)).build();
 
+    public static final FoodComponent MANGO_DONUT = new FoodComponent.Builder()
+            .nutrition(4).saturationModifier(0.6f).alwaysEdible().build();
+
+    public static final ConsumableComponent MANGO_DONUT_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 400, 0)), 0.9f)).build();
+
     public static final FoodComponent CHORUS_FRUIT_DONUT = new FoodComponent.Builder()
             .nutrition(4).saturationModifier(0.6f).alwaysEdible().build();
 
@@ -259,7 +314,7 @@ public class FoodList {
             .nutrition(4).saturationModifier(0.6f).alwaysEdible().build();
 
     public static final ConsumableComponent GLOW_BERRY_DONUT_EFFECT = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.GLOWING, 400, 0)), 0.9f)).build();
+            .consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.GLOWING, 400, 0)), 0.9f)).consumeEffect(new ApplyEffectsConsumeEffect(List.of(new StatusEffectInstance(StatusEffects.HASTE, 400, 0)), 0.9f)).build();
 
     public static final FoodComponent PINK_DONUT = new FoodComponent.Builder()
             .nutrition(4).saturationModifier(0.6f).alwaysEdible().build();
@@ -389,7 +444,7 @@ public class FoodList {
             .nutrition(1).saturationModifier(0.1F).alwaysEdible().build();
 
     public static final ConsumableComponent SWEET_CANDY_EFFECT = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 0.8f)).consumeSeconds(0.8F).build();
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 0.8f)).consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.WEAKNESS)).consumeSeconds(0.8F).build();
 
     public static final FoodComponent KIWI_BUBBLEGUM = new FoodComponent.Builder()
             .nutrition(1).saturationModifier(0.1F).alwaysEdible().build();
@@ -413,7 +468,7 @@ public class FoodList {
             .nutrition(1).saturationModifier(0.1F).alwaysEdible().build();
 
     public static final ConsumableComponent GLOW_BERRY_BUBBLEGUM_EFFECT = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.HASTE, 200, 0), 0.9f)).consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.GLOWING, 300, 0), 0.9f)).consumeSeconds(0.8F).build();
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.HASTE, 200, 0), 0.9f)).consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.GLOWING, 200, 0), 0.9f)).consumeSeconds(0.8F).build();
 
     public static final FoodComponent CHORUS_FRUIT_BUBBLEGUM = new FoodComponent.Builder()
             .nutrition(1).saturationModifier(0.1F).alwaysEdible().build();
@@ -433,6 +488,12 @@ public class FoodList {
     public static final ConsumableComponent APPLE_BUBBLEGUM_EFFECT = ConsumableComponents.food()
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 200, 0), 0.9f)).consumeSeconds(0.8F).build();
 
+    public static final FoodComponent MANGO_BUBBLEGUM = new FoodComponent.Builder()
+            .nutrition(1).saturationModifier(0.1F).alwaysEdible().build();
+
+    public static final ConsumableComponent MANGO_BUBBLEGUM_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 200, 0), 0.9f)).consumeSeconds(0.8F).build();
+
     public static final FoodComponent BUBBLEGUM = new FoodComponent.Builder()
             .nutrition(1).saturationModifier(0.1F).alwaysEdible().build();
 
@@ -440,6 +501,14 @@ public class FoodList {
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.INSTANT_HEALTH, 1, 0), 0.6f)).consumeSeconds(0.8F).build();
 
 
+    public static final FoodComponent COCONUT_DRINK = (new FoodComponent.Builder())
+            .nutrition(4).saturationModifier(0.6f).alwaysEdible().build();
+
+    public static final ConsumableComponent COCONUT_DRINK_EFFECT = ConsumableComponents.food()
+            .consumeSeconds(2.0F)
+            .sound(SoundEvents.ITEM_HONEY_BOTTLE_DRINK)
+            .consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.MINING_FATIGUE))
+            .build();
 
     public static final FoodComponent MEAT_SKEWER = (new FoodComponent.Builder())
             .nutrition(10).saturationModifier(0.8f).build();
@@ -454,8 +523,12 @@ public class FoodList {
     public static final FoodComponent PUMPKIN_SOUP = (new FoodComponent.Builder())
             .nutrition(8).saturationModifier(0.6f).build();
 
-    public static final FoodComponent RICE_PUDDING = (new FoodComponent.Builder())
-            .nutrition(10).saturationModifier(0.6f).build();
+    public static final FoodComponent COCONUT_RICE = (new FoodComponent.Builder())
+            .nutrition(8).saturationModifier(0.6f).build();
+
+    public static final ConsumableComponent COCONUT_RICE_EFFECT = ConsumableComponents.food()
+            .consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.MINING_FATIGUE))
+            .build();
 
     public static final FoodComponent CORNFLAKES = (new FoodComponent.Builder())
             .nutrition(6).saturationModifier(0.6f).build();
@@ -470,7 +543,7 @@ public class FoodList {
             .nutrition(10).saturationModifier(0.3f).alwaysEdible().build();
 
     public static final ConsumableComponent BANANA_SPLIT_EFFECT = ConsumableComponents.food()
-            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 350, 0), 0.9F)).consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SPEED, 350, 0), 0.9F)).build();
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 350, 0), 0.9F)).consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SPEED, 350, 0), 0.9F)).consumeEffect(new RemoveEffectsConsumeEffect(StatusEffects.WEAKNESS)).build();
 
     public static final FoodComponent MEAT_STEW = new FoodComponent.Builder()
             .nutrition(24).saturationModifier(1.2F).alwaysEdible().build();
