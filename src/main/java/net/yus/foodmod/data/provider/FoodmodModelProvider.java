@@ -48,9 +48,6 @@ public class FoodmodModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(Iteminit.COCONUT_BALL, Models.GENERATED);
-        itemModelGenerator.register(Iteminit.COCONUT_DRINK, Models.GENERATED);
-        itemModelGenerator.register(Iteminit.COCONUT, Models.GENERATED);
         itemModelGenerator.register(Iteminit.COCONUT_BOAT, Models.GENERATED);
         itemModelGenerator.register(Iteminit.COCONUT_CHEST_BOAT, Models.GENERATED);
         itemModelGenerator.register(Iteminit.FRUIT_SKEWER, Models.HANDHELD);

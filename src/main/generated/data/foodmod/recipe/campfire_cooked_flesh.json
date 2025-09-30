@@ -1,7 +1,7 @@
 {
   "type": "minecraft:campfire_cooking",
   "category": "food",
-  "cookingtime": 600,
+  "cookingtime": 800,
   "experience": 0.35,
   "ingredient": "minecraft:rotten_flesh",
   "result": {

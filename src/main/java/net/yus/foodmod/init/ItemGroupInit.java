@@ -46,10 +46,7 @@ public class ItemGroupInit {
                         entries.add(BlockInit.COCONUT_SAPLING);
                         entries.add(Iteminit.RICE_SEEDS);
 
-                        entries.add(Iteminit.RICE);
-                        entries.add(Iteminit.CORN);
                         entries.add(Iteminit.PUMPKIN_SLICE);
-                        entries.add(Iteminit.COCONUT);
                         entries.add(Iteminit.BLUE_BERRIES);
                         entries.add(Iteminit.BANANA);
                         entries.add(Iteminit.KIWI);
@@ -121,12 +118,19 @@ public class ItemGroupInit {
                         entries.add(Iteminit.FRIED_TURTLE_EGG);
                         entries.add(Iteminit.FRIED_SNIFFER_EGG);
 
+                        entries.add(Iteminit.CORN);
                         entries.add(Iteminit.COOKED_CORN);
                         entries.add(Iteminit.POPCORN);
 
+                        entries.add(Iteminit.RICE);
                         entries.add(Iteminit.RICE_CAKE);
                         entries.add(Iteminit.RICE_BALLS);
                         entries.add(Iteminit.SUSHI);
+
+                        entries.add(Iteminit.COCONUT);
+                        entries.add(Iteminit.COCONUT_DRINK);
+                        entries.add(Iteminit.COCONUT_BALL);
+
                         entries.add(Iteminit.FRIES);
                         entries.add(Iteminit.HOTDOG);
                         entries.add(Iteminit.TACO);
@@ -158,8 +162,6 @@ public class ItemGroupInit {
                         entries.add(Iteminit.MEAT_SKEWER);
                         entries.add(Iteminit.CORN_DOG);
 
-                        entries.add(Iteminit.COCONUT_DRINK);
-                        entries.add(Iteminit.COCONUT_BALL);
                         entries.add(Iteminit.COCONUT_RICE);
                         entries.add(Iteminit.BANANA_SPLIT);
                         entries.add(Iteminit.FRUIT_SALAD);

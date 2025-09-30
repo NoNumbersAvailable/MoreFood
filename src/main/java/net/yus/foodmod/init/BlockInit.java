@@ -24,11 +24,8 @@ import static net.minecraft.block.Blocks.*;
 
 public class BlockInit {
 
-
     public static final BlockSetType COCONUT_SET = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Identifier.of(Foodmod.MOD_ID, "coconut_set"));
     public static final WoodType COCONUT = WoodTypeBuilder.copyOf(WoodType.OAK).register(Identifier.of(Foodmod.MOD_ID, "coconut"), COCONUT_SET);
-
-
 
         public static final Block BLUE_BERRY_BUSH = Registry.register(
                 Registries.BLOCK,
@@ -42,23 +39,9 @@ public class BlockInit {
                 new RiceCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "rice_crop_block")))
                         .sounds(BlockSoundGroup.CROP)));
 
-
-    public static final Block COCONUT_LOG = registerBlock("coconut_log",
-            settings -> new PillarBlock(settings
-                    .strength(2.0f)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .sounds(BlockSoundGroup.WOOD)
-                    .burnable()
-            ));
-
-
-    public static final Block STRIPPED_COCONUT_LOG = registerBlock("stripped_coconut_log",
-            settings -> new PillarBlock(settings
-                    .strength(2.0f)
-                    .instrument(NoteBlockInstrument.BASS)
-                    .sounds(BlockSoundGroup.WOOD)
-                    .burnable()
-            ));
+    public static final Block CORN_CROP_BLOCK = Registry.register(Registries.BLOCK, Identifier.of(Foodmod.MOD_ID, "corn_crop_block"),
+            new CornCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "corn_crop_block")))
+                    .sounds(BlockSoundGroup.CROP)));
 
     public static final Block COCONUT_LEAVES = registerBlock("coconut_leaves",
             properties -> new TintedParticleLeavesBlock(0.02f, properties
@@ -68,12 +51,8 @@ public class BlockInit {
                     .blockVision(Blocks::never).burnable().pistonBehavior(PistonBehavior.DESTROY)
                     .solidBlock(Blocks::never)) {
             });
-    public static final Block COCONUT_SAPLING = registerBlock("coconut_sapling",
-            properties -> new ModSaplingBlock(ModSaplingGenerators.COCONUT, properties.mapColor(MapColor.DARK_GREEN)
-                    .noCollision().ticksRandomly().breakInstantly()
-                    .sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY), SAND));
 
-    public static final Block STRIPPED_COCONUT_WOOD = registerBlock("stripped_coconut_wood",
+    public static final Block COCONUT_LOG = registerBlock("coconut_log",
             settings -> new PillarBlock(settings
                     .strength(2.0f)
                     .instrument(NoteBlockInstrument.BASS)
@@ -89,6 +68,22 @@ public class BlockInit {
                     .burnable()
             ));
 
+    public static final Block STRIPPED_COCONUT_LOG = registerBlock("stripped_coconut_log",
+            settings -> new PillarBlock(settings
+                    .strength(2.0f)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+            ));
+
+    public static final Block STRIPPED_COCONUT_WOOD = registerBlock("stripped_coconut_wood",
+            settings -> new PillarBlock(settings
+                    .strength(2.0f)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+            ));
+
     public static final Block COCONUT_PLANKS = registerBlock("coconut_planks",
             settings -> new Block(settings
                     .strength(2.0f)
@@ -97,22 +92,12 @@ public class BlockInit {
                     .burnable()
             ));
 
-
-
     public static final Block COCONUT_STAIRS = registerBlock("coconut_stairs",
             properties -> new StairsBlock(BlockInit.COCONUT_PLANKS.getDefaultState(),
                     properties.strength(3.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable()));
 
     public static final Block COCONUT_SLAB = registerBlock("coconut_slab",
             properties -> new SlabBlock(properties.strength(3.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable()));
-
-    public static final Block COCONUT_BUTTON = registerBlock("coconut_button",
-            properties -> new ButtonBlock(BlockSetType.OAK, 30,
-                    properties.strength(0.5f).noCollision().sounds(BlockSoundGroup.WOOD).burnable()));
-
-    public static final Block COCONUT_PRESSURE_PLATE = registerBlock("coconut_pressure_plate",
-            properties -> new PressurePlateBlock(BlockSetType.OAK,
-                    properties.strength(0.5f).sounds(BlockSoundGroup.WOOD).burnable()));
 
     public static final Block COCONUT_FENCE = registerBlock("coconut_fence",
             properties -> new FenceBlock(properties.strength(3.0f, 3.0f).sounds(BlockSoundGroup.WOOD).burnable()));
@@ -129,9 +114,18 @@ public class BlockInit {
             properties -> new TrapdoorBlock(BlockSetType.OAK,
                     properties.strength(3.0f, 3.0f).nonOpaque().sounds(BlockSoundGroup.WOOD).burnable()));
 
-    public static final Block CORN_CROP_BLOCK = Registry.register(Registries.BLOCK, Identifier.of(Foodmod.MOD_ID, "corn_crop_block"),
-                new CornCropBlock(AbstractBlock.Settings.copy(Blocks.WHEAT).registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(Foodmod.MOD_ID, "corn_crop_block")))
-                        .sounds(BlockSoundGroup.CROP)));
+    public static final Block COCONUT_PRESSURE_PLATE = registerBlock("coconut_pressure_plate",
+            properties -> new PressurePlateBlock(BlockSetType.OAK,
+                    properties.strength(0.5f).sounds(BlockSoundGroup.WOOD).burnable()));
+
+    public static final Block COCONUT_BUTTON = registerBlock("coconut_button",
+            properties -> new ButtonBlock(BlockSetType.OAK, 30,
+                    properties.strength(0.5f).noCollision().sounds(BlockSoundGroup.WOOD).burnable()));
+
+    public static final Block COCONUT_SAPLING = registerBlock("coconut_sapling",
+            properties -> new ModSaplingBlock(ModSaplingGenerators.COCONUT, properties.mapColor(MapColor.DARK_GREEN)
+                    .noCollision().ticksRandomly().breakInstantly()
+                    .sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY), SAND));
 
     public static final Block COCONUT_SIGN = ModSignBlock.registerSignBlock(Identifier.of(Foodmod.MOD_ID, "coconut_sign"),
             settings -> new SignBlock(COCONUT, settings), AbstractBlock.Settings.copy(OAK_SIGN));
@@ -141,7 +135,6 @@ public class BlockInit {
             settings -> new HangingSignBlock(COCONUT, settings), AbstractBlock.Settings.copy(OAK_HANGING_SIGN));
     public static final Block COCONUT_WALL_HANGING_SIGN = ModSignBlock.registerSignBlock(Identifier.of(Foodmod.MOD_ID, "coconut_wall_hanging_sign"),
             settings -> new WallHangingSignBlock(COCONUT, settings), AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN));
-
 
     public static final Block CHOCOLATE_BLOCK = registerBlock("chocolate_block",
             settings -> new Block(settings
@@ -196,11 +189,6 @@ public class BlockInit {
                     new BlockItem(block, new Item.Settings()
                             .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Foodmod.MOD_ID, name))).useBlockPrefixedTranslationKey()));
         }
-
-
-
-
-
 
         public static void registerModBlocks() {
             Foodmod.LOGGER.info("Registering Mod Blocks for " + Foodmod.MOD_ID);
